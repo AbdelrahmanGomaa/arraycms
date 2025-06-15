@@ -1,0 +1,313 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Reservation>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+@{
+	Layout = "MasterTemplate.cshtml";
+}
+
+		<main class="js-animsition-overlay" data-animsition-overlay="true">
+	
+				<!-- form section start -->
+	@{
+		var bookingHeaderImg = Model.Value<MediaWithCrops>("bookingHeaderImg");
+
+	}
+	<section class="pos-rel bg-img-cover" style="background-image:url(@bookingHeaderImg.MediaUrl())">
+
+
+					<!-- bg-overlay -->
+					<div class="bg-overlay-black"></div>
+					<!-- pos-rel start -->
+			@* 		<form action='' class='form'>
+	
+						<div class="reservation-container">
+							<p class='field required'>
+							<label class='label required' for='name'>Full name</label>
+							<input class='text-input' id='name' name='name' required type='text'>
+							</p>
+							<p class='field required half'>
+							<label class='label' for='email'>E-mail</label>
+							<input class='text-input' id='email' name='email' required type='email'>
+							</p>
+							<p class='field required half'>
+							<label class='label' for='phone'>Phone</label>
+							<input class='text-input' id='phone' name='phone' required type='phone'>
+							</p>
+							<!-- <p class='field half required error'>
+							<label class='label' for='login'>Login</label>
+							<input class='text-input' id='login' name='login' required type='text' value='mican'>
+							</p> -->
+							<!-- <p class='field half required'>
+							<label class='label' for='password'>Password</label>
+							<input class='text-input' id='password' name='password' required type='password'>
+							</p> -->
+							<div class='field required'>
+							<label class='label'>Course</label>
+							<ul class='options'>
+								<li class='option'>
+								<input class='option-input' id='option-0' name='option' type='radio' value='0'>
+								<label class='option-label' for='option-0'>Web Fullstack</label>
+								</li>
+								<li class='option'>
+								<input class='option-input' id='option-1' name='option' type='radio' value='1'>
+								<label class='option-label' for='option-1'>Flutter</label>
+								</li>
+								<li class='option'>
+								<input class='option-input' id='option-2' name='option' type='radio' value='2'>
+								<label class='option-label' for='option-2'>Ai</label>
+								</li>
+								<li class='option'>
+								<input class='option-input' id='option-3' name='option' type='radio' value='3'>
+								<label class='option-label' for='option-3'>cyber security</label>
+								</li>
+							
+							</ul>
+							</div>
+	
+							<p class='field half'>
+								<label class='label' for='select'>Position</label>
+								<select class='select' id='select'>
+									<option selected value=''></option>
+									<option id="online" value='1'>Online</option>
+									<option id="offline" value='2'>Offline</option>
+								</select>
+								</p>
+	
+	
+							<div class='field half required offline'>
+							<label class='label'>Offline Appoiment</label>
+							<ul class='options'>
+								<li class='option'>
+								<input class='option-input' id='option-10' name='option111' type='radio' value='10'>
+								<label class='option-label' for='option-10'>friday</label>
+								</li>
+								<li class='option'>
+								<input class='option-input' id='option-11' name='option111' type='radio' value='11'>
+								<label class='option-label' for='option-11'>Sat & Tue</label>
+								</li>
+								<li class='option'>
+								<input class='option-input' id='option-12' name='option111' type='radio' value='12'>
+								<label class='option-label' for='option-12'>Sun & Wed</label>
+								</li>
+								<li class='option'>
+								<input class='option-input' id='option-13' name='option111' type='radio' value='13'>
+								<label class='option-label' for='option-13'>Mon & Thurs</label>
+								</li>
+							
+							</ul>
+							</div>
+	
+	
+							<div class='field half required online'>
+								<label class='label'> Online Appoiment </label>
+								<ul class='options'>
+									
+									<li class='option'>
+									<input class='option-input' id='option-111' name='option111' type='radio' value='111'>
+									<label class='option-label' for='option-111'>Sat & Tue</label>
+									</li>
+									<li class='option'>
+									<input class='option-input' id='option-112' name='option111' type='radio' value='112'>
+									<label class='option-label' for='option-112'>Sun & Wed</label>
+									</li>
+									<li class='option'>
+									<input class='option-input' id='option-113' name='option111' type='radio' value='113'>
+									<label class='option-label' for='option-113'>Mon & Thurs</label>
+									</li>
+								
+								</ul>
+								</div>
+	
+	
+							<p class='field'>
+							<label class='label' for='about'>About</label>
+							<textarea class='textarea' cols='50' id='about' name='about' rows='4'></textarea>
+							</p>
+							
+							<p class='field half'>
+							<input class='button' type='submit' value='Send'>
+							</p>
+	
+						</div>
+					  </form> *@
+
+		@(await Component.InvokeAsync("BookingForm"))
+
+					<!-- pos-rel end -->
+				</section>
+				<!-- form section end -->
+
+				
+			<!-- contact us start -->
+			<section id="down" class="pos-rel section-bg-dark-1">
+				<!-- pos-rel start -->
+				<div class="pos-rel flex-min-height-100vh">
+					<!-- container start -->
+					<div class="padding-top-bottom-120 container">
+						<!-- content start -->
+						<div class="js-scrollanim">
+							<h2 class="headline-l">
+													@Model.Value("bookingHeaderTitle")
+
+							</h2>
+							<p class="body-text-s margin-top-20 anim-text-reveal tr-delay-04">@Model.Value("bookingHeaderDesc")</p>
+						</div><!-- content end -->
+
+						<!-- flex-container start -->
+						<div class="flex-container padding-top-30">
+							<!-- column start -->
+							<div class="four-columns column-50-100 padding-top-60">
+								<div class="column-r-margin-20 js-scrollanim">
+									<p class="headline-xxxxs anim-text-double-fill invert" data-text="Email us">Email us</p>
+									<div class="padding-top-20">
+										<h6 class="anim-fade tr-delay-01">
+											<a href="#" class="subhead-xxs text-color-dadada text-hover-to-red js-pointer-small">email@umaya.com</a>
+										</h6><br>
+										<h6 class="anim-fade tr-delay-02">
+											<a href="#" class="subhead-xxs text-color-dadada text-hover-to-red js-pointer-small">email@umaya_job.com</a>
+										</h6><br>
+										<h6 class="anim-fade tr-delay-03">
+											<a href="#" class="subhead-xxs text-color-dadada text-hover-to-red js-pointer-small">email@umaya_agency.com</a>
+										</h6>
+									</div>
+								</div>
+							</div><!-- column end -->
+
+							<!-- column start -->
+							<div class="four-columns column-50-100 padding-top-60">
+								<div class="column-r-margin-20 js-scrollanim">
+									<p class="headline-xxxxs anim-text-double-fill invert" data-text="Visit us">Visit us</p>
+									<h6 class="list list_margin-1px padding-top-20 text-color-b0b0b0">
+										<span class="list__item">
+											<span class="d-inline-block hidden-box">
+												<span class="subhead-xxs anim-reveal tr-delay-01">PO Box 223158</span>
+											</span>
+										</span>
+										<span class="list__item">
+											<span class="d-inline-block hidden-box">
+												<span class="subhead-xxs anim-reveal tr-delay-02">Oliver Street q g</span>
+											</span>
+										</span>
+										<span class="list__item">
+											<span class="d-inline-block hidden-box">
+												<span class="subhead-xxs anim-reveal tr-delay-03">East Victoria 2006 UK</span>
+											</span>
+										</span>
+									</h6>
+									<div class="padding-top-10 anim-fade tr-delay-04">
+										<a href="#" class="subhead-xxs text-color-dadada text-hover-to-red js-pointer-small">Open in google maps</a>
+									</div>
+								</div>
+							</div><!-- column end -->
+
+							<!-- column start -->
+							<div class="four-columns column-50-100 padding-top-60">
+								<div class="column-r-margin-20 js-scrollanim">
+									<p class="headline-xxxxs anim-text-double-fill invert" data-text="Call us">Call us</p>
+									<div class="padding-top-20">
+										<h6 class="anim-fade tr-delay-01">
+											<a href="#" class="subhead-xxs text-color-dadada text-hover-to-red js-pointer-small">+23 8 8345 7346</a>
+										</h6><br>
+										<h6 class="anim-fade tr-delay-02">
+											<a href="#" class="subhead-xxs text-color-dadada text-hover-to-red js-pointer-small">+23 8 8532 7834</a>
+										</h6>
+									</div>
+								</div>
+							</div><!-- column end -->
+						</div><!-- flex-container end -->
+
+						<!-- social btns start -->
+						<div class="padding-top-90">
+							<ul class="list list_row list_margin-30px js-scrollanim">
+								<li class="list__item anim-fade">
+								    
+								    					    			    				    				    	@{
+	                        var contactUsFacebook = Model.Value<Link>("contactUsFacebook");
+	                        
+	                        if (contactUsFacebook != null)
+	                        {
+									<a href="@contactUsFacebook.Url" class="fill-btn text-color-979797 js-pointer-small" data-text="Facebook">@contactUsFacebook.Name</a>
+	                        }
+	                    }
+						
+								</li>
+						
+						
+								<li class="list__item anim-fade tr-delay-01">
+						
+											    			    				    				    	@{
+	                        var contactUsDribble = Model.Value<Link>("contactUsDribble");
+	                        
+	                        if (contactUsDribble != null)
+	                        {
+									<a href="@contactUsDribble.Url" class="fill-btn text-color-979797 js-pointer-small" data-text="Dribbble">@contactUsDribble.Name</a>
+	                        }
+	                    }
+						
+						
+								</li>
+								<li class="list__item anim-fade tr-delay-02">
+						
+											    			    				    				    	@{
+	                        var contactUsInstagram = Model.Value<Link>("contactUsInstagram");
+	                        
+	                        if (contactUsInstagram != null)
+	                        {
+									<a href="@contactUsInstagram.Url" class="fill-btn text-color-979797 js-pointer-small" data-text="Instagram">@contactUsInstagram.Name</a>
+	                        }
+	                    }
+						
+						
+								</li>
+								<li class="list__item anim-fade tr-delay-03">
+						
+											    			    				    				    	@{
+	                        var contactUsYoutube = Model.Value<Link>("contactUsYoutube");
+	                        
+	                        if (contactUsYoutube != null)
+	                        {
+									<a href="@contactUsYoutube.Url" class="fill-btn text-color-979797 js-pointer-small" data-text="Youtube">@contactUsYoutube.Name</a>
+	                        }
+	                    }
+						
+								</li>
+								<li class="list__item anim-fade tr-delay-04">
+						
+											    			    				    				    	@{
+	                        var contactUsBehance = Model.Value<Link>("contactUsBehance");
+	                        
+	                        if (contactUsBehance != null)
+	                        {
+									<a href="@contactUsBehance.Url" class="fill-btn text-color-979797 js-pointer-small" data-text="Behance">@contactUsBehance.Name</a>
+	                        }
+	                    }
+						
+								</li>
+								<li class="list__item anim-fade tr-delay-05">
+						
+											    			    				    				    	@{
+	                        var contactUsTwitter = Model.Value<Link>("contactUsTwitter");
+	                        
+	                        if (contactUsTwitter != null)
+	                        {
+									<a href="@contactUsTwitter.Url" class="fill-btn text-color-979797 js-pointer-small" data-text="Twitter">@contactUsTwitter.Name</a>
+	                        }
+	                    }
+						
+								</li>
+							</ul>
+						</div><!-- social btns end -->
+					</div><!-- container end -->
+				</div><!-- pos-rel end -->
+			</section><!-- contact us end -->
+
+		
+		</main><!-- main end -->
+@section Script {
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.customSelect/0.5.1/jquery.customSelect.min.js'></script>
+<script src='https://codepen.io/mican/pen/XgRmNr.js'></script>
+
+}

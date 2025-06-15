@@ -1,0 +1,467 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.BlogDetaills>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+
+@{
+	Layout = "MasterTemplate.cshtml";
+}
+
+
+		<!-- main start -->
+		<main class="js-animsition-overlay" data-animsition-overlay="true">
+			<!-- pos-rel start -->
+			
+
+			@{
+                            var BlogHeaderImg = Model.Value<MediaWithCrops>("menuDisplayImage");
+                            
+                          }
+			<section id="up" class="pos-rel bg-img-cover" style="background-image:url(@BlogHeaderImg.MediaUrl())">
+				<!-- bg-overlay -->
+
+				<div class="bg-overlay-black"></div>
+				<!-- pos-rel start -->
+				<div class="pos-rel flex-min-height-100vh">
+					<div class="padding-top-bottom-120 container small after-preloader-anim">
+						<!-- title start -->
+						<div class="text-center">
+							<h2 class="headline-xl anim-fade">@Model.Value("menuDisplayName")</h2>
+						</div><!-- title end -->
+
+						<!-- description start -->
+						<div class="flex-container description">
+							<div class="four-columns column-50-100 padding-top-1 text-center">
+								<span class="hidden-box d-inline-block">
+									<span class="subhead-xxs anim-reveal">By: @Model.Value("blogAuthor")</span>
+								</span>
+							</div>
+							<div class="four-columns column-50-100 padding-top-1 text-center">
+								<span class="hidden-box d-inline-block">
+									<span class="subhead-xxs anim-reveal tr-delay-02">In:@{
+    if (Model.HasValue("blogCategory"))
+    {
+        <ul>
+            @foreach (var item in Model.Value<IEnumerable<string>>("blogCategory"))
+            {
+                <li>@item</li>
+            }
+        </ul>
+    }
+}</span>
+								</span>
+							</div>
+							<div class="four-columns column-50-100 padding-top-1 text-center">
+								<span class="hidden-box d-inline-block">
+									<span class="subhead-xxs anim-reveal tr-delay-04">@Model.Value("blogPublishedDate")
+</span>
+								</span>
+							</div>
+						</div><!-- description end -->
+					</div>
+				</div><!-- pos-rel end -->
+			</section><!-- pos-rel end -->
+
+			<!-- post start -->
+			<div id="down" class="pos-rel section-bg-light-1" data-midnight="black">
+				<!-- pos-rel start -->
+				<div class="pos-rel padding-top-30 padding-bottom-120">
+					<!-- flex-container start -->
+					<div class="container flex-container">
+						<!-- post column start -->
+						<div class="eight-columns column-100-100 padding-top-90">
+							<!-- content-bg-light-2 start -->
+							<div class="content-bg-light-2 padding-20">
+								<!-- entry-content start -->
+								<article>
+									<div class="padding-bottom-30">
+									    
+									      @{
+                            var blogImage = Model.Value<MediaWithCrops>("blogImage");
+                            if (blogImage != null)
+                            {
+		                            
+		                            
+		                            	<a href="@blogImage.MediaUrl()" class="anim-overlay js-scrollanim js-photo-popup js-pointer-zoom">
+		                                <img src="@blogImage.MediaUrl()" alt="@blogImage.Value("alt")">
+
+										</a>
+		                            
+                            }
+                        }
+									    
+									
+									</div>
+									<h2 class="headline-xs text-color-black text-center">@Model.Value("blogTitle")</h2>
+									<p class="body-text-s text-color-black margin-top-20">
+								@Model.Value("blogFirstParagraph")</p>
+									<div class="flex-container padding-top-10">
+										<div class="six-columns padding-top-20">
+											<div class="column-r-margin-10 anim-overlay js-scrollanim">
+											  @{
+                            var blogBodyImage = Model.Value<MediaWithCrops>("blogBodyImage");
+                            if (blogBodyImage != null)
+                            {
+		                            
+		                            
+		                            	<a href="@blogBodyImage.MediaUrl()" class="anim-overlay js-scrollanim js-photo-popup js-pointer-zoom">
+		                                <img src="@blogBodyImage.MediaUrl()" alt="@blogBodyImage.Value("alt")">
+
+										</a>
+		                            
+                            }
+                        }
+								
+											</div>
+										</div>
+										<div class="six-columns padding-top-20">
+											<div class="column-l-margin-10 anim-overlay js-scrollanim">
+																						  @{
+                            var blogSecBodyImage = Model.Value<MediaWithCrops>("blogSecBodyImage");
+                            if (blogSecBodyImage != null)
+                            {
+		                            
+		                            
+		                            	<a href="@blogSecBodyImage.MediaUrl()" class="anim-overlay js-scrollanim js-photo-popup js-pointer-zoom">
+		                                <img src="@blogSecBodyImage.MediaUrl()" alt="@blogSecBodyImage.Value("alt")">
+
+										</a>
+		                            
+                            }
+                        }
+						
+											</div>
+										</div>
+									</div>
+									<p class="body-text-s text-color-black margin-top-20">@Model.Value("blogSecondParagraph")</p>
+									<blockquote class="quote">
+										<p class="body-text-m text-color-black text-justify margin-top-20">@Model.Value("quotedParagraph")</p>
+									</blockquote>
+									<p class="body-text-s text-color-black margin-top-20">@Model.Value("blogThirdParagraph")</p>
+									<div class="flex-container padding-top-10">
+										<div class="six-columns padding-top-20">
+											<div class="column-r-margin-10 anim-overlay js-scrollanim">
+											
+        											@{
+                                    var typedMultiMediaPicker = Model.Value<IEnumerable<MediaWithCrops>>("blogMultipleBodyImg");
+                                    foreach (var entry in typedMultiMediaPicker)
+                                    {
+                                        <a href="@entry.MediaUrl()" class="d-block js-photo-popup js-pointer-zoom">
+                                        <img src="@entry.MediaUrl()" alt="Post" />
+												</a>
+                                    }
+                                }
+                                	
+											</div>
+										</div>
+										
+									</div>
+									<p class="body-text-s text-color-black margin-top-20">@Model.Value("blogLastParagraph")</p>
+									<div class="padding-top-30">
+									  @{
+                            var blogLastImage = Model.Value<MediaWithCrops>("blogLastImage");
+                            if (blogLastImage != null)
+                            {
+		                            
+		                            
+		                            	<a href="@blogLastImage.MediaUrl()" class="anim-overlay js-scrollanim js-photo-popup js-pointer-zoom">
+		                                <img src="@blogLastImage.MediaUrl()" alt="@blogLastImage.Value("alt")">
+
+										</a>
+		                            
+                            }
+                        }
+									  
+									</div>
+								</article><!-- entry-content end -->
+
+								<!-- post share start -->
+								<div class="padding-top-60 text-center">
+									<span class="subhead-xxs text-color-888888">Share this article:</span>
+									<ul class="list list_row list_center padding-top-10 js-scrollanim">
+										<li class="list__item">
+											<div class="anim-fade">
+												<a href="#" class="icon-overlay-btn black js-pointer-large">
+													<i class="icon-overlay-btn__inner fab fa-instagram"></i>
+												</a>
+											</div>
+										</li>
+										<li class="list__item">
+											<div class="anim-fade tr-delay-01">
+												<a href="#" class="icon-overlay-btn black js-pointer-large">
+													<i class="icon-overlay-btn__inner fab fa-twitter"></i>
+												</a>
+											</div>
+										</li>
+										<li class="list__item">
+											<div class="anim-fade tr-delay-02">
+												<a href="#" class="icon-overlay-btn black js-pointer-large">
+													<i class="icon-overlay-btn__inner fab fa-facebook-f"></i>
+												</a>
+											</div>
+										</li>
+										<li class="list__item">
+											<div class="anim-fade tr-delay-03">
+												<a href="#" class="icon-overlay-btn black js-pointer-large">
+													<i class="icon-overlay-btn__inner fab fa-youtube"></i>
+												</a>
+											</div>
+										</li>
+										<li class="list__item">
+											<div class="anim-fade tr-delay-04">
+												<a href="#" class="icon-overlay-btn black js-pointer-large">
+													<i class="icon-overlay-btn__inner fab fa-behance"></i>
+												</a>
+											</div>
+										</li>
+									</ul>
+								</div><!-- post share end -->
+							</div><!-- content-bg-light-2 end -->
+
+							<!-- similar posts start -->
+							<div class="padding-top-90">
+								<h2 class="headline-xxxs text-color-black">You might also like</h2>
+
+								<!-- flex-container start -->
+								<div class="flex-container">
+									<!-- column start -->
+									<div class="four-columns padding-top-30">
+										<a href="post_red-cars.html" class="column-r-margin-20 d-block hover-box js-pointer-large js-animsition-link">
+											<div class="hidden-box">
+												<img class="img-hover-scale" src="../../css/images/posts/red-cars/close-up-photo-of-car-rims-2811496.jpg" alt="Post">
+											</div>
+											<h3 class="headline-xxxxs text-color-black margin-top-10 hover-move-right">Do red cars cost<br>more to insure</h3>
+										</a>
+									</div><!-- column end -->
+									<!-- column start -->
+									<div class="four-columns padding-top-30">
+										<a href="post_dont-panic.html" class="column-l-r-margin-10 d-block hover-box js-pointer-large js-animsition-link">
+											<div class="hidden-box">
+												<img class="img-hover-scale" src="../../css/images/posts/dont-panic/adult-beautiful-blur-casual-374703.jpg" alt="Post">
+											</div>
+											<h3 class="headline-xxxxs text-color-black margin-top-10 hover-move-right">Don't panic. Don't panic.<br>Don't panic.</h3>
+										</a>
+									</div><!-- column end -->
+									<!-- column start -->
+									<div class="four-columns padding-top-30">
+										<a href="post_good-morning.html" class="column-l-margin-20 d-block hover-box js-pointer-large js-animsition-link">
+											<div class="hidden-box">
+												<img class="img-hover-scale" src="../../css/images/posts/good-morning/beans-beverage-black-coffee-breakfast-373888.jpg" alt="Post">
+											</div>
+											<h3 class="headline-xxxxs text-color-black margin-top-10 hover-move-right">Good morning!<br>Have a nice day</h3>
+										</a>
+									</div><!-- column end -->
+								</div><!-- flex-container end -->
+							</div><!-- similar posts end -->
+
+						
+						<!-- sidebar column start -->
+						<aside class="four-columns column-100-100 padding-top-90">
+							<!-- column-l-margin-40-999 start -->
+							<div class="column-l-margin-40-999">
+								<!-- about autor start -->
+								<div class="padding-20 content-bg-light-2 text-center">
+  @{
+                            var AuthorImg = Model.Value<MediaWithCrops>("authorImg");
+                            if (AuthorImg != null)
+                            {
+		                                <img src="@AuthorImg.MediaUrl()" alt="@AuthorImg.Value("alt")">
+                            }
+                        }									<h4 class="headline-xxxxs text-color-black margin-top-30">@Model.Value("blogAuthor")</h4>
+									<p class="body-text-xs text-color-black margin-top-20">@Model.Value("blogAuthorBrief")</p>
+									<ul class="list list_row list_center padding-top-30">
+										<li class="list__item">
+											<a href="#" class="icon-overlay-btn black js-pointer-large">
+												<i class="icon-overlay-btn__inner fab fa-instagram"></i>
+											</a>
+										</li>
+										<li class="list__item">
+											<a href="#" class="icon-overlay-btn black js-pointer-large">
+												<i class="icon-overlay-btn__inner fab fa-twitter"></i>
+											</a>
+										</li>
+										<li class="list__item">
+											<a href="#" class="icon-overlay-btn black js-pointer-large">
+												<i class="icon-overlay-btn__inner fab fa-facebook-f"></i>
+											</a>
+										</li>
+										<li class="list__item">
+											<a href="#" class="icon-overlay-btn black js-pointer-large">
+												<i class="icon-overlay-btn__inner fab fa-youtube"></i>
+											</a>
+										</li>
+										<li class="list__item">
+											<a href="#" class="icon-overlay-btn black js-pointer-large">
+												<i class="icon-overlay-btn__inner fab fa-behance"></i>
+											</a>
+										</li>
+									</ul>
+								</div><!-- about autor end -->
+
+								<!-- padding-top-60 start -->
+								<div class="padding-top-60">
+									<!-- content-bg-light-2 start -->
+									<div class="padding-20 content-bg-light-2">
+									
+										<!-- categories start -->
+										<div class="padding-bottom-90 text-center">
+											<h4 class="subhead-m text-color-black padding-bottom-30">Categories</h4>
+											<ul class="list list_center list_margin-20px">
+												<li class="list__item">
+													<a href="#" class="flip-btn text-color-black js-pointer-small" data-text="Art (8)">Art (8)</a>
+												</li>
+												<li class="list__item">
+													<a href="#" class="flip-btn text-color-black js-pointer-small" data-text="Production (25)">Production (25)</a>
+												</li>
+												<li class="list__item">
+													<a href="#" class="flip-btn text-color-black js-pointer-small" data-text="Culture (14)">Culture (14)</a>
+												</li>
+												<li class="list__item">
+													<a href="#" class="flip-btn text-color-black js-pointer-small" data-text="Management (24)">Management (24)</a>
+												</li>
+												<li class="list__item">
+													<a href="#" class="flip-btn text-color-black js-pointer-small" data-text="Design (48)">Design (48)</a>
+												</li>
+												<li class="list__item">
+													<a href="#" class="flip-btn text-color-black js-pointer-small" data-text="Illustration (41)">Illustration (41)</a>
+												</li>
+											</ul>
+										</div><!-- categories end -->
+
+										<!-- recent posts start -->
+										<div class="padding-bottom-30">
+											<h4 class="subhead-m text-color-black text-center padding-bottom-30">Recent posts</h4>
+											<!-- post start -->
+											<div class="padding-bottom-60">
+												<a href="post_good-morning.html" class="d-block hover-box js-pointer-large js-animsition-link">
+													<div class="hidden-box">
+														<img class="img-hover-scale" src="../../css/images/posts/good-morning/beans-beverage-black-coffee-breakfast-373888.jpg" alt="Post">
+													</div>
+													<h5 class="headline-xxxxs text-color-black margin-top-10 hover-move-right">Good morning!<br>Have a nice day</h5>
+												</a>
+											</div><!-- post end -->
+
+											<!-- post start -->
+											<div class="padding-bottom-60">
+												<a href="post_dont-panic.html" class="d-block hover-box js-pointer-large js-animsition-link">
+													<div class="hidden-box">
+														<img class="img-hover-scale" src="../../css/images/posts/dont-panic/adult-beautiful-blur-casual-374703.jpg" alt="Post">
+													</div>
+													<h5 class="headline-xxxxs text-color-black margin-top-10 hover-move-right">Don't panic. Don't panic.<br>Don't panic.</h5>
+												</a>
+											</div><!-- post end -->
+
+											<!-- post start -->
+											<div class="padding-bottom-60">
+												<a href="post_red-cars.html" class="d-block hover-box js-pointer-large js-animsition-link">
+													<div class="hidden-box">
+														<img class="img-hover-scale" src="../../css/images/posts/red-cars/close-up-photo-of-car-rims-2811496.jpg" alt="Post">
+													</div>
+													<h5 class="headline-xxxxs text-color-black margin-top-10 hover-move-right">Do red cars cost<br>more to insure</h5>
+												</a>
+											</div><!-- post end -->
+										</div><!-- recent posts end -->
+
+										<!-- tag clouds start -->
+										<div class="padding-bottom-90 text-center">
+											<h4 class="subhead-m text-color-black padding-bottom-30">Tag clouds</h4>
+											<ul class="list list_margin-20px list_row">
+												<li class="list__item">
+													<a href="#" class="flip-btn text-color-black js-pointer-small" data-text="business">business</a>
+												</li>
+												<li class="list__item">
+													<a href="#" class="flip-btn text-color-black js-pointer-small" data-text="artist">artist</a>
+												</li>
+												<li class="list__item">
+													<a href="#" class="flip-btn text-color-black js-pointer-small" data-text="nature">nature</a>
+												</li>
+												<li class="list__item">
+													<a href="#" class="flip-btn text-color-black js-pointer-small" data-text="trends">trends</a>
+												</li>
+												<li class="list__item">
+													<a href="#" class="flip-btn text-color-black js-pointer-small" data-text="video">video</a>
+												</li>
+												<li class="list__item">
+													<a href="#" class="flip-btn text-color-black js-pointer-small" data-text="tech">tech</a>
+												</li>
+												<li class="list__item">
+													<a href="#" class="flip-btn text-color-black js-pointer-small" data-text="news">news</a>
+												</li>
+												<li class="list__item">
+													<a href="#" class="flip-btn text-color-black js-pointer-small" data-text="UI/UX">UI/UX</a>
+												</li>
+												<li class="list__item">
+													<a href="#" class="flip-btn text-color-black js-pointer-small" data-text="web">web</a>
+												</li>
+											</ul>
+										</div><!-- tag clouds end -->
+
+										<!-- instagram start -->
+										<div class="text-center">
+											<h4 class="subhead-m text-color-black padding-bottom-10">Instagram</h4>
+											<!-- flex-container start -->
+											<div class="flex-container">
+												<!-- column start -->
+												<div class="six-columns padding-top-20">
+													<a href="#" class="column-r-margin-10 d-block hover-box hidden-box js-pointer-open">
+														<img class="img-hover-scale" src="../../css/images/posts/instagram/woman-with-black-and-white-ribbon-on-her-neck-715603.jpg" alt="instagram post">
+													</a>
+												</div><!-- column end -->
+
+												<!-- column start -->
+												<div class="six-columns padding-top-20">
+													<a href="#" class="column-l-margin-10 d-block hover-box hidden-box js-pointer-open">
+														<img class="img-hover-scale" src="../../css/images/posts/instagram/ballerina-stretching-1820147.jpg" alt="instagram post">
+													</a>
+												</div><!-- column end -->
+
+												<!-- column start -->
+												<div class="six-columns padding-top-20">
+													<a href="#" class="column-r-margin-10 d-block hover-box hidden-box js-pointer-open">
+														<img class="img-hover-scale" src="../../css/images/posts/instagram/man-wearing-white-pants-with-left-foot-up-2881785.jpg" alt="instagram post">
+													</a>
+												</div><!-- column end -->
+
+												<!-- column start -->
+												<div class="six-columns padding-top-20">
+													<a href="#" class="column-l-margin-10 d-block hover-box hidden-box js-pointer-open">
+														<img class="img-hover-scale" src="../../css/images/posts/instagram/woman-wearing-red-beret-and-gray-long-sleeve-dress-with-wild-3518091.jpg" alt="instagram post">
+													</a>
+												</div><!-- column end -->
+											</div><!-- flex-container end -->
+										</div><!-- instagram end -->
+									</div><!-- content-bg-light-2 end -->
+								</div><!-- padding-top-60 end -->
+							</div><!-- column-l-margin-40-999 end -->
+						</aside><!-- sidebar column end -->
+					</div><!-- flex-container end -->
+				</div><!-- pos-rel end -->
+			</div><!-- post end -->
+
+			<!-- next post start -->
+			<section class="pos-rel bg-img-cover" style="background-image:url(../../css/images/posts/good-morning/beans-beverage-black-coffee-breakfast-373888.jpg)">
+				<!-- bg-overlay -->
+				<div class="bg-overlay-black"></div>
+				<!-- pos-rel start -->
+				<div class="pos-rel flex-min-height-100vh">
+					<div class="padding-top-bottom-120 container small text-center">
+						<div class="js-scrollanim">
+							<!-- button start -->
+							<a href="post_good-morning.html" class="skew-btn js-pointer-large js-animsition-link anim-fade">
+								<span class="skew-btn__box">
+									<span class="skew-btn__content">Next Article</span>
+									<span class="skew-btn__arrow"></span>
+								</span>
+							</a><!-- button end -->
+
+							<!-- title start -->
+							<div class="padding-top-30 text-center">
+								<a href="post_good-morning.html" class="js-pointer-large js-animsition-link">
+									<h2 class="headline-xl anim-fade tr-delay-02">Good morning! Have a nice day</h2>
+								</a>
+							</div><!-- title end -->
+						</div>
+					</div>
+				</div><!-- pos-rel end -->
+			</section><!-- next post end -->
+		</main><!-- main end -->

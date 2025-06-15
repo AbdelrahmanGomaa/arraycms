@@ -1,0 +1,141 @@
+﻿@using Umbraco.Cms.Web.Common;
+@using Umbraco.Extensions
+@using Umbraco.Cms.Web.Common.PublishedModels
+@using Umbraco.Cms.Web.Common.Views
+@using Umbraco.Cms.Core.Models.PublishedContent
+
+@using ArrayCMS.Controllers
+@using Umbraco.Cms.Core.Models
+@model ArrayCMS.Models.BookingFormViewModel
+
+@inject UmbracoHelper umbracoHelper
+
+@*@umbracoHelper.GetDictionaryValue("")*@
+
+
+
+@using (Html.BeginUmbracoForm<BookingFormController>(nameof(BookingFormController.SubmitAsync), null, new { @id = "send", @class = "form" }))
+{
+
+
+		<div class="reservation-container">
+			<p class='field required'>
+				<label class='label required' for='name'>Full name</label>
+				<input class='text-input' id='name' asp-for='FullName' required type='text'>
+			</p>
+			<p class='field required half'>
+				<label class='label' for='email'>E-mail</label>
+				<input class='text-input' id='email' asp-for='Email' required type='email'>
+			</p>
+			<p class='field required half'>
+				<label class='label' for='phone'>Phone</label>
+				<input class='text-input' id='phone' asp-for='PhoneNumber' required type='phone'>
+			</p>
+			<!-- <p class='field half required error'>
+			<label class='label' for='login'>Login</label>
+			<input class='text-input' id='login' name='login' required type='text' value='mican'>
+			</p> -->
+			<!-- <p class='field half required'>
+			<label class='label' for='password'>Password</label>
+			<input class='text-input' id='password' name='password' required type='password'>
+			</p> -->
+		<!-- Course -->
+		<div class='field required'>
+			<label class='label'>Course</label>
+			<ul class='options' name="Courses">
+				<li class='option'>
+					<input class='option-input' id='option-0' name='Courses' type='radio' value='Web Fullstack'>
+					<label class='option-label' for='option-0'>Web Fullstack</label>
+				</li>
+				<li class='option'>
+					<input class='option-input' id='option-1' name='Courses' type='radio' value='Flutter'>
+					<label class='option-label' for='option-1'>Flutter</label>
+				</li>
+				<li class='option'>
+					<input class='option-input' id='option-2' name='Courses' type='radio' value='Ai'>
+					<label class='option-label' for='option-2'>Ai</label>
+				</li>
+				<li class='option'>
+					<input class='option-input' id='option-3' name='Courses' type='radio' value='Cyber Security'>
+					<label class='option-label' for='option-3'>Cyber Security</label>
+				</li>
+			</ul>
+		</div>
+
+			@* <p class='field half'>
+				<label class='label' for='select'>Position</label>
+			<select class='select' id='select'  name="Position" >
+					<option selected value=''> </option>
+					<option id="online" value='Online'>Online</option>
+					<option id="offline" value='Offline'>Offline</option>
+				</select>
+			</p>
+ *@
+
+		<p class='field half'>
+			<label class='label' for='select'>Position</label>
+			<select class='select' id='select' name="Position">
+				<option selected value=''></option>
+				<option id="online" value='1'>Online</option>
+				<option id="offline" value='2'>Offline</option>
+			</select>
+		</p>
+
+
+			<div class='field half required offline'>
+				<label class='label'>Offline Appoiment</label>
+			<ul class='options' name="OfflinePosition">
+					<li class='option'>
+					<input class='option-input' id='option-10' name='OfflinePosition' type='radio' value='friday'>
+						<label class='option-label' for='option-10'>friday</label>
+					</li>
+					<li class='option'>
+					<input class='option-input' id='option-11' name='OfflinePosition' type='radio' value='Sat & Tue'>
+						<label class='option-label' for='option-11'>Sat & Tue</label>
+					</li>
+					<li class='option'>
+					<input class='option-input' id='option-12' name='OfflinePosition' type='radio' value='Sun & Wed'>
+						<label class='option-label' for='option-12'>Sun & Wed</label>
+					</li>
+					<li class='option'>
+					<input class='option-input' id='option-13' name='OfflinePosition' type='radio' value='Mon & Thurs'>
+						<label class='option-label' for='option-13'>Mon & Thurs</label>
+					</li>
+
+				</ul>
+			</div>
+
+
+			<div class='field half required online'>
+				<label class='label'> Online Appoiment </label>
+			<ul class='options' name="OnlinePosition">
+
+				<li class='option' >
+					<input class='option-input' id='option-111' name='OnlinePosition' type='radio' value='Sat & Tue'>
+						<label class='option-label' for='option-111'>Sat & Tue</label>
+					</li>
+					<li class='option'>
+					<input class='option-input' id='option-112' name='OnlinePosition' type='radio' value='Sun & Wed'>
+						<label class='option-label' for='option-112'>Sun & Wed</label>
+					</li>
+					<li class='option'>
+					<input class='option-input' id='option-113' name='OnlinePosition' type='radio' value='Mon & Thurs'>
+						<label class='option-label' for='option-113'>Mon & Thurs</label>
+					</li>
+
+				</ul>
+			</div>
+
+
+			<p class='field'>
+				<label class='label' for='about'>About</label>
+				<textarea class='textarea' cols='50' id='about' asp-for='About' rows='4'></textarea>
+			</p>
+
+			<p class='field half'>
+				<input class='button' type='submit' id="send" value='Send'>
+			</p>
+
+		</div>
+
+}

@@ -1,0 +1,47 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks;
+
+@{   
+    var content = (ContentModels.RecentWorksList)Model.Content;
+
+  string categoryclass = "";
+                        if (content.HasValue("category"))
+                        {
+                            foreach (var category in content.Value<IEnumerable<string>>("category"))
+                            {
+                                categoryclass += category.ToLower() + " ";
+                            }
+                        }
+
+}
+
+
+
+
+					<div class="padding-top-60 grid-item-33-50-100 js-isotope-filter-grid-item @categoryclass">
+					<a href="project_beauty-lab.html" class="grid-margin-box hover-box js-animsition-link js-pointer-large">
+						<div class="anim-img-scale anim-img-scale_hover js-img-scale">
+						
+						
+						  @{
+                            var recentWorkImg = content.Value<MediaWithCrops>("recentWorkImg");
+                            if (recentWorkImg != null)
+                            {
+							<img class="anim-img-scale__inner" src="@recentWorkImg.MediaUrl()" alt="@recentWorkImg.Value("alt")">
+                            }
+                        }
+						
+							<div class="bg-overlay-black"></div>
+						</div>
+						<div class="margin-top-10 js-scrollanim">
+							<span class="hidden-box d-block">
+								<span class="subhead-xxs text-color-red anim-slide">@content.Value("categoryTitle")</span>
+							</span>
+							<h3 class="hidden-box">
+								<span class="headline-xxxs text-color-black anim-slide tr-delay-02">@content.Value("itemTitle")</span>
+							</h3>
+						</div>
+					</a>
+				</div><!-- grid-item end -->

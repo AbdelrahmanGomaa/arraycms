@@ -1,0 +1,143 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListModel>
+ 
+ @using Umbraco.Cms.Core.Models
+
+ @for (var i = 0; i < Model.Count; i++)
+    {
+        var block = Model[i];
+      
+
+        if (block?.ContentUdi != null)
+        {
+            var data = block.Content;
+            @if(i % 2 == 0)
+            {
+                    
+                    
+
+				<article class="flex-container flex-align-center padding-top-60">
+					<div class="six-columns padding-top-30">
+					   @{
+					   var Aboutlink = data.Value<Link>("blogLink");
+					   }
+					   
+						<a href="@Aboutlink.Url" class="d-block hover-box anim-img-reveal js-scrollanim js-pointer-large js-animsition-link">
+							<div class="anim-img-reveal__hidden">
+								<div class="anim-img-reveal__scale">
+									<div class="bg-overlay-black"></div>
+								  @{
+                            var ArticleImg = data.Value<MediaWithCrops>("articleImg");
+                            if (ArticleImg != null)
+                            {
+									<img class="img-hover-scale" src="@ArticleImg.MediaUrl()" alt="Post">
+                            }
+                        }
+								
+								</div>
+							</div>
+						</a>
+					</div>
+					<div class="six-columns padding-top-30">
+						<div class="column-l-margin-40 anim-fade js-scrollanim">
+							<ul class="list list_row list_margin-30px">
+								<li class="list__item">
+									<a href="@Aboutlink.Url" class="subhead-xxs text-color-888888 text-hover-to-red js-pointer-small">By: @data.Value("articleAuthor")</a>
+								</li>
+								<li class="list__item">
+									<a href="@Aboutlink.Url" class="subhead-xxs text-color-888888 text-hover-to-red js-pointer-small">In:@data.Value("articleSubject")</a>
+								</li>
+								<li class="list__item">
+									<a href="@Aboutlink.Url" class="subhead-xxs text-color-888888 text-hover-to-red js-pointer-small">@data.Value("articledate")</a>
+								</li>
+							</ul>
+							<a href="post_dont-panic.html" class="margin-top-bottom-30 d-block js-pointer-large js-animsition-link">
+								<h3 class="headline-xxxs text-color-black">
+								@data.Value("articleTitle")
+								</h3>
+								<p class="body-text-xs margin-top-20 text-color-black">@data.Value("articleDescription")</p>
+							</a>
+							@{
+	                        var articleReadMoreLink2 = data.Value<Link>("articleReadMoreLink");
+	                        
+	                        if (articleReadMoreLink2 != null)
+	                        {
+	<a href="@articleReadMoreLink2.Url" class="skew-btn js-pointer-large js-animsition-link">
+								<span class="skew-btn__box">
+									<span class="skew-btn__content text-color-black">@articleReadMoreLink2.Name</span>
+									<span class="skew-btn__arrow black"></span>
+								</span>
+							</a>	                        }
+	                    }
+						
+						</div>
+					</div>
+				</article><!-- blog-entry end -->
+
+}
+else 
+
+{
+            <article class="flex-container reverse flex-align-center padding-top-60">
+				
+	<div class="six-columns padding-top-30">
+	      @{
+					   var Aboutlink2 = data.Value<Link>("blogLink");
+					   }
+						<div class="column-r-margin-40 anim-fade js-scrollanim">
+							<ul class="list list_row list_margin-30px">
+								<li class="list__item">
+									<a href="@Aboutlink2.Url" class="subhead-xxs text-color-888888 text-hover-to-red js-pointer-small">By: @data.Value("articleAuthor")</a>
+								</li>
+								<li class="list__item">
+									<a href="@Aboutlink2.Url" class="subhead-xxs text-color-888888 text-hover-to-red js-pointer-small">In:@data.Value("articleSubject")</a>
+								</li>
+								<li class="list__item">
+									<a href="@Aboutlink2.Url" class="subhead-xxs text-color-888888 text-hover-to-red js-pointer-small">@data.Value("articledate")</a>
+								</li>
+							</ul>
+							<a href="@Aboutlink2.Url" class="margin-top-bottom-30 d-block js-pointer-large js-animsition-link">
+								<h3 class="headline-xxxs text-color-black">
+									@data.Value("articleTitle")
+								</h3>
+								<p class="body-text-xs margin-top-20 text-color-black">@data.Value("articleDescription")</p>
+							</a>
+						@{
+	                        var articleReadMoreLink = data.Value<Link>("articleReadMoreLink");
+	                        
+	                        if (articleReadMoreLink != null)
+	                        {
+	<a href="@articleReadMoreLink.Url" class="skew-btn js-pointer-large js-animsition-link">
+								<span class="skew-btn__box">
+									<span class="skew-btn__content text-color-black">@articleReadMoreLink.Name</span>
+									<span class="skew-btn__arrow black"></span>
+								</span>
+							</a>	                        }
+	                    }
+						
+						
+						</div>
+					</div>
+					<div class="six-columns padding-top-30">
+						<a href="@Aboutlink2.Url" class="d-block hover-box anim-img-reveal js-scrollanim js-pointer-large js-animsition-link">
+							<div class="anim-img-reveal__hidden">
+								<div class="anim-img-reveal__scale">
+									<div class="bg-overlay-black"></div>
+								  @{
+                            var ArticleImg = data.Value<MediaWithCrops>("articleImg");
+                            if (ArticleImg != null)
+                            {
+									<img class="img-hover-scale" src="@ArticleImg.MediaUrl()" alt="Post">
+                            }
+                        }
+								
+								</div>
+							</div>
+						</a>
+					</div>
+				</article><!-- blog-entry end -->
+
+
+
+}
+        }
+    }

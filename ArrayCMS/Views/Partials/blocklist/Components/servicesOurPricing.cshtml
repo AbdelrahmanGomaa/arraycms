@@ -1,0 +1,61 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks;
+
+@{   
+    var content = (ContentModels.ServicesOurPricing)Model.Content;
+
+}
+
+
+
+				<div class="padding-top-60">
+					<div class="flex-container border-box border-radius-10px hidden-box">
+						<div class="three-columns content-bg-red d-flex flex-center-center">
+							<div class="text-center padding-top-bottom-50">
+								<h3 class="subhead-s">@content.Value("priceCategory")</h3>
+								<h4 class="margin-top-10">
+									<span class="headline-l d-block">@content.Value("price")</span>
+									<span class="subhead-xs d-block">@content.Value("round")</span>
+								</h4>
+							</div>
+						</div>
+						<div class="six-columns d-flex flex-align-center">
+							<div class="width-100perc padding-top-bottom-50">
+								<!-- list start -->
+								<ul class="list list_center subhead-xxs text-color-b0b0b0 margin-left-right-20">
+								@content.Value("priceSwag")
+								</ul><!-- list end -->
+							</div>
+						</div>
+						<div class="three-columns d-flex flex-center-center">
+							<div class="price-btn-offset text-center">
+								
+								
+	@{
+	                        var priceSignUp = content.Value<Link>("priceSignUp");
+	                        
+	                        if (priceSignUp != null)
+	                        {
+		                        
+		                        	<a href="@priceSignUp.Url" class="skew-btn js-pointer-large">
+									<span class="skew-btn__box">
+										<span class="skew-btn__content">@priceSignUp.Name</span>
+										<span class="skew-btn__arrow"></span>
+									</span>
+								</a>
+		                        
+		                        
+		                        
+		                            @*<a href=""@Aboutlink.Url" class="btn-curve mt-20 wow fadeInUp" data-wow-delay=".8s"><span>@Aboutlink.Name</span></a>*@
+	                        }
+	                    }
+
+								
+								
+							
+							</div>
+						</div>
+					</div>
+				</div><!-- price end -->

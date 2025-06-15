@@ -1,0 +1,55 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks;
+
+@{   
+    var content = (ContentModels.OurJourneyList)Model.Content;
+
+}
+
+
+	<div class="six-columns padding-top-30">
+						<div class="column-r-margin-40 anim-fade js-scrollanim">
+							<ul class="list list_row list_margin-30px">
+								<li class="list__item">
+									<a href="" class="subhead-xxs text-color-888888 text-hover-to-red js-pointer-small">By: @content.Value("articleAuthor")</a>
+								</li>
+								<li class="list__item">
+									<a href="@Aboutlink.Url" class="subhead-xxs text-color-888888 text-hover-to-red js-pointer-small">In:@content.Value("articleSubject")</a>
+								</li>
+								<li class="list__item">
+									<a href="@Aboutlink.Url" class="subhead-xxs text-color-888888 text-hover-to-red js-pointer-small">@content.Value("articledate")</a>
+								</li>
+							</ul>
+							<a href="@Aboutlink.Url" class="margin-top-bottom-30 d-block js-pointer-large js-animsition-link">
+								<h3 class="headline-xxxs text-color-black">
+									@content.Value("articleTitle")
+								</h3>
+								<p class="body-text-xs margin-top-20 text-color-black">@content.Value("articleDescription")</p>
+							</a>
+							<a href="@Aboutlink.Url" class="skew-btn js-pointer-large js-animsition-link">
+								<span class="skew-btn__box">
+									<span class="skew-btn__content text-color-black">@content.Value("articleReadMoreLink")</span>
+									<span class="skew-btn__arrow black"></span>
+								</span>
+							</a>
+						</div>
+					</div>
+					<div class="six-columns padding-top-30">
+						<a href="@Aboutlink.Url" class="d-block hover-box anim-img-reveal js-scrollanim js-pointer-large js-animsition-link">
+							<div class="anim-img-reveal__hidden">
+								<div class="anim-img-reveal__scale">
+									<div class="bg-overlay-black"></div>
+								  @{
+                            var ArticleImg = content.Value<MediaWithCrops>("articleImg");
+                            if (ArticleImg != null)
+                            {
+									<img class="img-hover-scale" src="@ArticleImg.MediaUrl()" alt="Post">
+                            }
+                        }
+								
+								</div>
+							</div>
+						</a>
+					</div>

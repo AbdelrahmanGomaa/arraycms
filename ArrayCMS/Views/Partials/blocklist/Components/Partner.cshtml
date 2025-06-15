@@ -1,0 +1,23 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+    var content = (ContentModels.Partner)Model.Content;
+    //var settings = (.MyElementTypeAliasOfSettings)Model.Settings;
+}
+
+
+@*Output the value of field with alias 'heading' from the Element Type selected as Content section*@
+@*<h1>@content.Value("partnerName")</h1>*@
+@*<img class="client-logo client-hover-out" src="@content.Value("partnerImage")" alt="clients logo">*@
+
+@{
+   
+    var PartnerImage = content.Value<IPublishedContent>("partnerImage");
+}
+
+<img loading="lazy" src="@PartnerImage.Url()">
+              
+                    
+
+            
+

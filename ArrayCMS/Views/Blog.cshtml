@@ -1,0 +1,113 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Blog>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+
+@{
+	Layout = "MasterTemplate.cshtml";
+	
+	  var selection = Umbraco.Content(Guid.Parse("9879c0e0-04e1-4182-857a-312d25287dd8"))
+  .ChildrenOfType("blogDetaills")
+  .Where(x => x.IsVisible());
+	
+	
+  
+
+
+	
+	
+	        string categorycalss = "";
+
+}
+
+
+		<!-- main start -->
+		<main class="js-animsition-overlay" data-animsition-overlay="true">
+			<!-- pos-rel start -->
+			@{
+                            var BlogHeaderImg = Model.Value<MediaWithCrops>("menuDisplayImage");
+                            
+                          }
+			<section id="up" class="pos-rel js-parallax-bg" style="background-image:url(@BlogHeaderImg.MediaUrl())">
+				<!-- bg-overlay -->
+				<div class="bg-overlay-black"></div>
+				<!-- pos-rel start -->
+				<div class="pos-rel flex-min-height-100vh">
+					<div class="padding-top-bottom-120 width-100perc">
+						<!-- title start -->
+						<h2 class="headline-xxxxl text-center hidden-box after-preloader-anim">
+							<span class="anim-slide">@Model.Value("headerDisplayName")</span>
+						</h2><!-- title end -->
+					</div>
+				</div><!-- pos-rel end -->
+			</section><!-- pos-rel end -->
+
+			<!-- blog start -->
+			<div id="down" class="pos-rel section-bg-light-2" data-midnight="black">
+				<!-- pos-rel start -->
+				<div class="pos-rel padding-top-bottom-120">
+
+					<!-- filter-buttons start -->
+					<div class="list list_row list_center list_margin-30px container js-filter-button-box js-scrollanim">
+						<button class="list__item js-filter-button anim-fade js-pointer-small js-filter-button-active" data-filter="*">
+							<span class="flip-btn text-color-black" data-text="Everything">Everything</span>
+						</button>
+						<button class="list__item js-filter-button anim-fade tr-delay-01 js-pointer-small" data-filter=".culture">
+							<span class="flip-btn text-color-black" data-text="Culture">Culture</span>
+						</button>
+						<button class="list__item js-filter-button anim-fade tr-delay-02 js-pointer-small" data-filter=".art">
+							<span class="flip-btn text-color-black" data-text="Art">Art</span>
+						</button>
+						<button class="list__item js-filter-button anim-fade tr-delay-03 js-pointer-small" data-filter=".design">
+							<span class="flip-btn text-color-black" data-text="Design">Design</span>
+						</button>
+					</div><!-- filter-buttons end -->
+
+					<!-- js-isotope-filter-grid-box start -->
+			@foreach(var item in selection)
+{
+    <div class="js-isotope-filter-grid-box padding-top-20 container">
+        
+       @{
+    if (item.HasValue("blogCategory"))
+    {
+            @foreach (var cate in item.Value<IEnumerable<string>>("blogCategory"))
+            {
+                                categorycalss += cate.ToLower() + " ";
+            }
+    }
+}
+        <article class="padding-top-40 grid-item-50-50-100 js-isotope-filter-grid-item @categorycalss">
+            <div class="grid-margin-box hover-box pos-rel js-touch-hover-scroll">
+
+                @{
+                    var ItemImage = item.Value<MediaWithCrops>("blogImage");
+                    if (ItemImage != null)
+                    {
+                        <a href="@item.Url()" class="d-block pos-rel hidden-box content-bg-dark-1 js-pointer-large js-animsition-link">
+                            <img class="img-hover-opacity img-hover-scale in" src="@ItemImage.MediaUrl()" alt="Post">
+                            <div class="bg-overlay-black"></div>
+                            <h3 class="pos-abs pos-left-bottom headline-xxxs hover-move-right">@item.Value("blogTitle")</h3>
+                        </a>
+                    }
+                }
+
+                <ul class="pos-abs pos-left-top list list_row list_margin-30px">
+                    <li class="list__item">
+                        <a href="@item.Url()" class="subhead-xxs hover-text-fill js-pointer-small" data-text="By: @item.Value("blogAuthor")">By: @item.Value("blogAuthor")</a>
+                    </li>
+                    <li class="list__item">
+                        <a href="@item.Url()" class="subhead-xxs hover-text-fill tr-delay-01 js-pointer-small" data-text="In: @categorycalss">In: @categorycalss</a>
+                    </li>
+                    <li class="list__item">
+                        <a href="@item.Url()" class="subhead-xxs hover-text-fill tr-delay-02 js-pointer-small" data-text="@item.Value("blogPublishedDate")">@item.Value("blogPublishedDate")</a>
+                    </li>
+                </ul>
+            </div>
+        </article><!-- grid-item end -->
+
+    </div>
+}
+				</div><!-- pos-rel end -->
+			</div><!-- blog end -->
+		</main><!-- main end -->

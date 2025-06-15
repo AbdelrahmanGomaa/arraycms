@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListModel>
+@{
+    if (Model?.Any() != true) { return; }
+}
+
+	<div class="js-isotope-filter-grid-box container full">
+				<!-- empty grid -->
+				<div class="js-isotope-filter-grid-item empty-grid-1px-33-50-none"></div>
+				<div class="js-isotope-filter-grid-item empty-grid-200px-33-none"></div>
+				<div class="js-isotope-filter-grid-item empty-grid-100px-33-50-none"></div>
+
+                                
+                                                                             
+    @foreach (var block in Model)
+    {
+        if (block?.ContentUdi == null) { continue; }
+        var data = block.Content;
+
+                    @await Html.PartialAsync("blocklist/Components/" + data.ContentType.Alias, block)
+    }   
+    
+   
+    </div>
+       

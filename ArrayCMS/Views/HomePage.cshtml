@@ -1,0 +1,1257 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+ @using Umbraco.Cms.Core.Models
+@{
+	Layout = "MasterTemplate.cshtml";
+	// var Testimonials = Umbraco.Content(1087);
+}
+
+
+
+<main class="js-animsition-overlay" data-animsition-overlay="true">
+	<!-- home slider start -->
+	<section id="up" class="pos-rel section-bg-dark-1 js-home-slider fullscreen-slider">
+
+		@Html.GetBlockListHtml(Model, "mainHomeSliders", "MainHomeSlider")
+
+		<!-- swiper-wrapper start -->
+		@*	<div class="swiper-wrapper">
+		<!-- swiper-slide start -->
+		<div class="swiper-slide home">
+		<!-- slide-bg -->
+		<div class="js-parallax-slide-bg bg-img-cover" style="background-image:url(/css/images/Videos/_DSC8988.jpg)"></div>
+		<!-- bg-overlay -->
+		<div class="bg-overlay-black"></div>
+
+		<!-- content start -->
+		<div class="flex-min-height-100vh pos-rel" data-swiper-parallax-x="30%">
+		<div class="container small padding-top-bottom-120">
+		<h2 class="headline-xl">
+		<span class="hidden-box d-block">
+		<span class="anim-slide tr-delay-02">From zero </span>
+		</span>
+		<span class="hidden-box d-block">
+		<span class="anim-slide tr-delay-03">to the middle</span>
+		</span>
+		<span class="hidden-box d-block">
+		<span class="anim-slide tr-delay-04">of the path</span>
+		</span>
+		</h2>
+		<div class="margin-top-30 anim-fade tr-delay-08">
+		<a href="#" class="border-btn js-pointer-large">
+		<span class="border-btn__inner">Read more</span>
+		<span class="border-btn__lines-1"></span>
+		<span class="border-btn__lines-2"></span>
+		</a>
+		</div>
+		</div>
+		</div><!-- content end -->
+		</div><!-- swiper-slide end -->
+		<!-- swiper-slide start -->
+		<div class="swiper-slide home">
+		<!-- slide-bg -->
+		<div class="js-parallax-slide-bg bg-img-cover" style="background-image:url(css/images/Videos/Sequence01_Moment.jpg)"></div>
+		<!-- bg-overlay -->
+		<div class="bg-overlay-black"></div>
+
+		<!-- content start -->
+		<div class="flex-min-height-100vh pos-rel" data-swiper-parallax-x="30%">
+		<div class="container small text-center padding-top-bottom-120">
+		<h2 class="headline-xl">
+		<span class="hidden-box d-block">
+		<span class="anim-slide tr-delay-02">The link between </span>
+		</span>
+		<span class="hidden-box d-block">
+		<span class="anim-slide tr-delay-03">
+		<span class="text-color-red">strong</span> material
+		</span>
+		</span>
+		<span class="hidden-box d-block">
+		<span class="anim-slide tr-delay-04 text-color-red"> and practical application</span>
+		</span>
+		</h2>
+		<div class="margin-top-30 anim-fade tr-delay-08">
+		<a href="#" class="border-btn js-pointer-large">
+		<span class="border-btn__inner">Read more</span>
+		<span class="border-btn__lines-1"></span>
+		<span class="border-btn__lines-2"></span>
+		</a>
+		</div>
+		</div>
+		</div><!-- content end -->
+		</div><!-- swiper-slide end -->
+		<!-- swiper-slide start -->
+		<div class="swiper-slide home">
+		<!-- slide-bg -->
+		<div class="js-parallax-slide-bg bg-img-cover" style="background-image:url(css/images/Videos/1_g7vToxOAkz-rfjtpHwgApg.jpeg)"></div>
+		<!-- bg-overlay -->
+		<div class="bg-overlay-black"></div>
+
+		<!-- content start -->
+		<div class="flex-min-height-100vh pos-rel" data-swiper-parallax-x="30%">
+		<div class="container small padding-top-bottom-120">
+		<h2 class="headline-xl">
+		<span class="hidden-box d-block">
+		<span class="anim-slide tr-delay-02">Your fastest way</span>
+		</span>
+		<span class="hidden-box d-block">
+		<span class="anim-slide tr-delay-03">to get your</span>
+		</span>
+		<span class="hidden-box d-block">
+		<span class="anim-slide tr-delay-04"> dream job</span>
+		</span>
+		</h2>
+		<div class="margin-top-30 anim-fade tr-delay-08">
+		<a href="#" class="border-btn js-pointer-large">
+		<span class="border-btn__inner">Read more</span>
+		<span class="border-btn__lines-1"></span>
+		<span class="border-btn__lines-2"></span>
+		</a>
+		</div>
+		</div>
+		</div><!-- content end -->
+		</div><!-- swiper-slide end -->
+		</div><!-- swiper-wrapper end -->*@
+		<!-- swiper-button-prev start -->
+		<div class="swiper-button-prev-box fullscreen-slider-arrow after-preloader-anim">
+			<div class="anim-fade">
+				<div class="swiper-button-prev"></div>
+			</div>
+		</div><!-- swiper-button-prev end -->
+		<!-- swiper-button-next start -->
+		<div class="swiper-button-next-box fullscreen-slider-arrow after-preloader-anim">
+			<div class="anim-fade tr-delay-06">
+				<div class="swiper-button-next"></div>
+			</div>
+		</div><!-- swiper-button-next end -->
+		<!-- swiper-pagination start -->
+		<div class="pagination-box fullscreen-slider-pagination after-preloader-anim">
+			<div class="anim-fade tr-delay-03">
+				<div class="swiper-pagination counter-pagination"></div>
+			</div>
+		</div><!-- swiper-pagination end -->
+
+
+
+
+
+	</section><!-- home slider end -->
+	<!-- about us start -->
+	<section id="down" class="pos-rel section-bg-dark-2">
+		<!-- pos-rel start -->
+		<div class="pos-rel padding-top-bottom-120">
+			<!-- flex-container start -->
+			<div class="container flex-container padding-bottom-70">
+				<!-- column start -->
+				<div class="six-columns padding-bottom-20">
+					<!-- title start -->
+					<h2 class="column-l-r-margin-10 headline-m js-scrollanim">
+						@Model.Value("weAreCreativeTitle")
+					</h2><!-- title end -->
+				</div><!-- column end -->
+				<!-- column start -->
+				<div class="six-columns padding-bottom-20">
+					<div class="column-l-r-margin-10">
+						<p class="body-text-s anim-text-reveal js-scrollanim">
+							@Model.Value("weAreCreativeDescription")
+						</p>
+
+						<!-- list start -->
+						<ul class="list text-color-dadada margin-top-30 js-scrollanim">
+							@Model.Value("ourCoursesList")
+
+						</ul><!-- list end -->
+					</div>
+				</div><!-- column end -->
+			</div><!-- flex-container end -->
+			<!-- js-infinite-slider start -->
+			<div class="js-infinite-slider about-slider hidden-box">
+				<!-- swiper-wrapper start -->
+				@Html.GetBlockListHtml(Model, "creativeImagesSliders", "CreativeImagesSlider")
+
+				@*<div class="swiper-wrapper">
+				<!-- swiper-slide start -->
+				<div class="swiper-slide">
+				<div class="bg-overlay-black"></div>
+				<img src="css/images/about/about_slider/people-holding-their-phones-3184435.jpg" alt="About us">
+				</div><!-- swiper-slide end -->
+				<!-- swiper-slide start -->
+				<div class="swiper-slide">
+				<div class="bg-overlay-black"></div>
+				<img src="css/images/about/about_slider/fashion-people-woman-girl-3979213.jpg" alt="About us">
+				<img class="padding-top-20" src="css/images/Videos/Sequence01_Moment.jpg" alt="About us">
+				</div><!-- swiper-slide end -->
+				<!-- swiper-slide start -->
+				<div class="swiper-slide">
+				<div class="bg-overlay-black"></div>
+				<img src="css/images/about/about_slider/man-people-desk-laptop-3931391.jpg" alt="About us">
+				</div><!-- swiper-slide end -->
+				<!-- swiper-slide start -->
+				<div class="swiper-slide">
+				<div class="bg-overlay-black"></div>
+				<img src="css/images/Videos/photo_2022-04-01_16-29-53.jpg" alt="About us">
+				</div><!-- swiper-slide end -->
+				<!-- swiper-slide start -->
+				<div class="swiper-slide">
+				<div class="bg-overlay-black"></div>
+				<img src="css/images/Videos/WhatsApp Image 2022-11-03 at 1.02.26 AM.jpeg" alt="About us">
+				<img class="padding-top-20" src="css/images/Videos/photo_2022-11-03_00-56-04.jpg" alt="About us">
+				</div><!-- swiper-slide end -->
+				<!-- swiper-slide start -->
+				<div class="swiper-slide">
+				<div class="bg-overlay-black"></div>
+				<img src="css/images/Videos/Web capture_3-11-2022_4179_app.clipchamp.com.jpeg" alt="About us">
+				</div><!-- swiper-slide end -->
+				<!-- swiper-slide start -->
+				<div class="swiper-slide">
+				<div class="bg-overlay-black"></div>
+				<img src="css/images/Videos/photo_2022-11-03_00-56-08.jpg" alt="About us">
+				</div><!-- swiper-slide end -->
+				<!-- swiper-slide start -->
+				<div class="swiper-slide">
+				<div class="bg-overlay-black"></div>
+				<img src="css/images/about/about_slider/women-s-white-framed-sunglasses-2690323.jpg" alt="About us">
+				<img class="padding-top-20" src="css/images/about/about_slider/fashion-man-sunglasses-people-3965233.jpg" alt="About us">
+				</div><!-- swiper-slide end -->
+				<!-- swiper-slide start -->
+				<div class="swiper-slide">
+				<div class="bg-overlay-black"></div>
+				<img src="css/images/Videos/photo_2022-11-03_00-56-09.jpg" alt="About us">
+				</div><!-- swiper-slide end -->
+				</div>*@
+
+
+				<!-- swiper-wrapper end -->
+			</div><!-- js-infinite-slider end -->
+		</div><!-- pos-rel end -->
+	</section><!-- about us end -->
+	<!-- portfolio start -->
+	<section class="pos-rel section-bg-light-2" data-midnight="black">
+		<!-- pos-rel start -->
+		<div class="pos-rel padding-top-bottom-120">
+			<!-- title start -->
+			<h2 class="headline-xxxl text-color-black text-center hidden-box js-scrollanim">
+				@Model.Value("recentWorkTitle")
+			</h2><!-- title end -->
+			<!-- filter-buttons start -->
+			<div class="list list_row list_center list_margin-30px padding-top-90 js-filter-button-box js-scrollanim">
+				<button class="list__item js-filter-button anim-fade js-pointer-small js-filter-button-active" data-filter="*">
+					<span class="flip-btn text-color-black" data-text="Everything">Everything</span>
+				</button>
+				<button class="list__item js-filter-button anim-fade tr-delay-01 js-pointer-small" data-filter=".marketing">
+					<span class="flip-btn text-color-black" data-text="Marketing">Marketing</span>
+				</button>
+				<button class="list__item js-filter-button anim-fade tr-delay-02 js-pointer-small" data-filter=".photoshoot">
+					<span class="flip-btn text-color-black" data-text="Photoshoot">Photoshoot</span>
+				</button>
+				<button class="list__item js-filter-button anim-fade tr-delay-03 js-pointer-small" data-filter=".branding">
+					<span class="flip-btn text-color-black" data-text="Branding">Branding</span>
+				</button>
+			</div><!-- filter-buttons end -->
+			<!-- js-isotope-filter-grid-box start -->
+			@Html.GetBlockListHtml(Model, "recentWorksLists", "RecentWorksList")
+
+
+			@*	<div class="js-isotope-filter-grid-box container full">
+			<!-- empty grid -->
+			<div class="js-isotope-filter-grid-item empty-grid-1px-33-50-none"></div>
+			<div class="js-isotope-filter-grid-item empty-grid-200px-33-none"></div>
+			<div class="js-isotope-filter-grid-item empty-grid-100px-33-50-none"></div>
+
+			<!-- grid-item start -->
+			<div class="padding-top-60 grid-item-33-50-100 js-isotope-filter-grid-item branding">
+			<a href="project_beauty-lab.html" class="grid-margin-box hover-box js-animsition-link js-pointer-large">
+			<div class="anim-img-scale anim-img-scale_hover js-img-scale">
+			<img class="anim-img-scale__inner" src="css/images/projects/beauty-lab/beauty-beauty-product-cosmetics-makeup-2845213.jpg" alt="project">
+			<div class="bg-overlay-black"></div>
+			</div>
+			<div class="margin-top-10 js-scrollanim">
+			<span class="hidden-box d-block">
+			<span class="subhead-xxs text-color-red anim-slide">Branding</span>
+			</span>
+			<h3 class="hidden-box">
+			<span class="headline-xxxs text-color-black anim-slide tr-delay-02">Beauty lab</span>
+			</h3>
+			</div>
+			</a>
+			</div><!-- grid-item end -->
+			<!-- grid-item start -->
+			<div class="padding-top-60 grid-item-33-50-100 js-isotope-filter-grid-item marketing">
+			<a href="project_drone.html" class="grid-margin-box hover-box js-animsition-link js-pointer-large">
+			<div class="anim-img-scale anim-img-scale_hover js-img-scale">
+			<img class="anim-img-scale__inner" src="css/images/projects/sneakers/person-holding-a-shoes-3194608.jpg" alt="project">
+			<div class="bg-overlay-black"></div>
+			</div>
+			<div class="margin-top-10 js-scrollanim">
+			<span class="hidden-box d-block">
+			<span class="subhead-xxs text-color-red anim-slide">Marketing</span>
+			</span>
+			<h3 class="hidden-box">
+			<span class="headline-xxxs text-color-black anim-slide tr-delay-02">Sneakers</span>
+			</h3>
+			</div>
+			</a>
+			</div><!-- grid-item end -->
+			<!-- grid-item start -->
+			<div class="padding-top-60 grid-item-33-50-100 js-isotope-filter-grid-item marketing">
+			<a href="project_drone.html" class="grid-margin-box hover-box js-animsition-link js-pointer-large">
+			<div class="anim-img-scale anim-img-scale_hover js-img-scale">
+			<img class="anim-img-scale__inner" src="css/images/projects/knit-cap/man-wears-orange-knit-cap-and-shirt-2802601.jpg" alt="project">
+			<div class="bg-overlay-black"></div>
+			</div>
+			<div class="margin-top-10 js-scrollanim">
+			<span class="hidden-box d-block">
+			<span class="subhead-xxs text-color-red anim-slide">Marketing</span>
+			</span>
+			<h3 class="hidden-box">
+			<span class="headline-xxxs text-color-black anim-slide tr-delay-02">Knit cap</span>
+			</h3>
+			</div>
+			</a>
+			</div><!-- grid-item end -->
+			<!-- grid-item start -->
+			<div class="padding-top-60 grid-item-33-50-100 js-isotope-filter-grid-item photoshoot">
+			<a href="project_drone.html" class="grid-margin-box hover-box js-animsition-link js-pointer-large">
+			<div class="anim-img-scale anim-img-scale_hover js-img-scale">
+			<img class="anim-img-scale__inner" src="css/images/projects/pexels/woman-in-black-sexy-top-2825034.jpg" alt="project">
+			<div class="bg-overlay-black"></div>
+			</div>
+			<div class="margin-top-10 js-scrollanim">
+			<span class="hidden-box d-block">
+			<span class="subhead-xxs text-color-red anim-slide">Photoshoot</span>
+			</span>
+			<h3 class="hidden-box">
+			<span class="headline-xxxs text-color-black anim-slide tr-delay-02">Pexels</span>
+			</h3>
+			</div>
+			</a>
+			</div><!-- grid-item end -->
+			<!-- grid-item start -->
+			<div class="padding-top-60 grid-item-33-50-100 js-isotope-filter-grid-item marketing">
+			<a href="project_drone.html" class="grid-margin-box hover-box js-animsition-link js-pointer-large">
+			<div class="anim-img-scale anim-img-scale_hover js-img-scale">
+			<img class="anim-img-scale__inner" src="css/images/projects/drone/quadcopter-on-wooden-surface-1601217.jpg" alt="project">
+			<div class="bg-overlay-black"></div>
+			</div>
+			<div class="margin-top-10 js-scrollanim">
+			<span class="hidden-box d-block">
+			<span class="subhead-xxs text-color-red anim-slide">Marketing</span>
+			</span>
+			<h3 class="hidden-box">
+			<span class="headline-xxxs text-color-black anim-slide tr-delay-02">Drone</span>
+			</h3>
+			</div>
+			</a>
+			</div><!-- grid-item end -->
+			<!-- grid-item start -->
+			<div class="padding-top-60 grid-item-33-50-100 js-isotope-filter-grid-item marketing">
+			<a href="project_blue-ridge.html" class="grid-margin-box hover-box js-animsition-link js-pointer-large">
+			<div class="anim-img-scale anim-img-scale_hover js-img-scale">
+			<img class="anim-img-scale__inner" src="css/images/projects/blue-ridge/flat-lay-photography-of-several-product-bottles-on-withered-1667071.jpg" alt="project">
+			<div class="bg-overlay-black"></div>
+			</div>
+			<div class="margin-top-10 js-scrollanim">
+			<span class="hidden-box d-block">
+			<span class="subhead-xxs text-color-red anim-slide">Marketing</span>
+			</span>
+			<h3 class="hidden-box">
+			<span class="headline-xxxs text-color-black anim-slide tr-delay-02">Blue ridge</span>
+			</h3>
+			</div>
+			</a>
+			</div><!-- grid-item end -->
+			<!-- grid-item start -->
+			<div class="padding-top-60 grid-item-33-50-100 js-isotope-filter-grid-item photoshoot">
+			<a href="project_drone.html" class="grid-margin-box hover-box js-animsition-link js-pointer-large">
+			<div class="anim-img-scale anim-img-scale_hover js-img-scale">
+			<img class="anim-img-scale__inner" src="css/images/projects/hoop-earrings/woman-with-gold-colored-hoop-earrings-2420555.jpg" alt="project">
+			<div class="bg-overlay-black"></div>
+			</div>
+			<div class="margin-top-10 js-scrollanim">
+			<span class="hidden-box d-block">
+			<span class="subhead-xxs text-color-red anim-slide">Photoshoot</span>
+			</span>
+			<h3 class="hidden-box">
+			<span class="headline-xxxs text-color-black anim-slide tr-delay-02">Hoop earrings</span>
+			</h3>
+			</div>
+			</a>
+			</div><!-- grid-item end -->
+			<!-- grid-item start -->
+			<div class="padding-top-60 grid-item-33-50-100 js-isotope-filter-grid-item photoshoot">
+			<a href="project_drone.html" class="grid-margin-box hover-box js-animsition-link js-pointer-large">
+			<div class="anim-img-scale anim-img-scale_hover js-img-scale">
+			<img class="anim-img-scale__inner" src="css/images/projects/black-eyes/woman-in-black-tube-top-beside-woman-in-white-off-shoulder-3823424-2.jpg" alt="project">
+			<div class="bg-overlay-black"></div>
+			</div>
+			<div class="margin-top-10 js-scrollanim">
+			<span class="hidden-box d-block">
+			<span class="subhead-xxs text-color-red anim-slide">Photoshoot</span>
+			</span>
+			<h3 class="hidden-box">
+			<span class="headline-xxxs text-color-black anim-slide tr-delay-02">Black eyes</span>
+			</h3>
+			</div>
+			</a>
+			</div><!-- grid-item end -->
+			<!-- grid-item start -->
+			<div class="padding-top-60 grid-item-33-50-100 js-isotope-filter-grid-item branding">
+			<a href="project_drone.html" class="grid-margin-box hover-box js-animsition-link js-pointer-large">
+			<div class="anim-img-scale anim-img-scale_hover js-img-scale">
+			<img class="anim-img-scale__inner" src="css/images/projects/the-ordinary/the-ordinary-product-line-3685530.jpg" alt="project">
+			<div class="bg-overlay-black"></div>
+			</div>
+			<div class="margin-top-10 js-scrollanim">
+			<span class="hidden-box d-block">
+			<span class="subhead-xxs text-color-red anim-slide">Branding</span>
+			</span>
+			<h3 class="hidden-box">
+			<span class="headline-xxxs text-color-black anim-slide tr-delay-02">The ordinary</span>
+			</h3>
+			</div>
+			</a>
+			</div><!-- grid-item end -->
+			</div><!-- js-isotope-filter-grid-box end -->
+			*@
+		</div><!-- pos-rel end -->
+	</section><!-- portfolio end -->
+	<!-- team start -->
+	<section class="pos-rel section-bg-dark-2">
+		<!-- pos-rel start -->
+		<div class="pos-rel padding-top-bottom-120">
+			<!-- title start -->
+			<h2 class="headline-xxl text-center js-scrollanim hidden-box">
+				<span class="anim-slide">
+					@Model.Value("ourCreativeTeamTitle")
+				</span>
+			</h2><!-- title end -->
+			<!-- js-3-view-slider start -->
+			<div class="js-3-view-slider padding-top-bottom-90 hidden-box pos-rel">
+				<!-- swiper-wrapper start -->
+				@Html.GetBlockListHtml(Model, "ourCreativeTeamLists", "OurCreativeTeamList")
+
+				@*
+				<div class="swiper-wrapper js-slider-scroll-anim">
+				<!-- swiper-slide start -->
+				<div class="swiper-slide">
+				<!-- anim-img-scale start -->
+				<div class="anim-img-scale hover-box">
+				<img class="anim-img-scale__inner" src="css/images/team/team_slider/red-air-jordan-baseball-cap-3452649.jpg" alt="Jason Hardeman">
+				<div class="bg-overlay-black"></div>
+				<!-- social btns start -->
+				<ul class="list pos-abs pos-left-top">
+				<li class="list__item hidden-box">
+				<div class="hover-slide">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Facebook">Facebook</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-01">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Dribbble">Dribbble</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-02">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Instagram">Instagram</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-03">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Behance">Behance</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-04">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Twitter">Twitter</a>
+				</div>
+				</li>
+				</ul><!-- social btns end -->
+				</div><!-- anim-img-scale end -->
+				<!-- content start -->
+				<div class="margin-top-20 margin-left-20">
+				<h4 class="subhead-m anim-text-double-fill tr-delay-01" data-text="Jason Hardeman">Jason Hardeman</h4><br>
+				<p class="headline-xxxxs margin-top-5 anim-text-double-fill invert tr-delay-03" data-text="Creative director">Creative director</p>
+				</div><!-- content end -->
+				</div><!-- swiper-slide end -->
+				<!-- swiper-slide start -->
+				<div class="swiper-slide">
+				<!-- anim-img-scale start -->
+				<div class="anim-img-scale hover-box">
+				<img class="anim-img-scale__inner" src="css/images/team/team_slider/woman-wearing-eyeglasses-on-brown-wooden-plank-1845210.jpg" alt="Amanda Bryan">
+				<div class="bg-overlay-black"></div>
+				<!-- social btns start -->
+				<ul class="list pos-abs pos-left-top">
+				<li class="list__item hidden-box">
+				<div class="hover-slide">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Facebook">Facebook</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-01">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Dribbble">Dribbble</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-02">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Instagram">Instagram</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-03">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Behance">Behance</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-04">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Twitter">Twitter</a>
+				</div>
+				</li>
+				</ul><!-- social btns end -->
+				</div><!-- anim-img-scale end -->
+				<!-- content start -->
+				<div class="margin-top-20 margin-left-20">
+				<h4 class="subhead-m anim-text-double-fill tr-delay-01" data-text="Amanda Bryan">Amanda Bryan</h4><br>
+				<p class="headline-xxxxs margin-top-5 anim-text-double-fill invert tr-delay-03" data-text="Ui/UX designer">Ui/UX designer</p>
+				</div><!-- content end -->
+				</div><!-- swiper-slide end -->
+				<!-- swiper-slide start -->
+				<div class="swiper-slide">
+				<!-- anim-img-scale start -->
+				<div class="anim-img-scale hover-box">
+				<img class="anim-img-scale__inner" src="css/images/team/team_slider/woman-posing-for-photo-shoot-1689731.jpg" alt="Sharon Arney">
+				<div class="bg-overlay-black"></div>
+				<!-- social btns start -->
+				<ul class="list pos-abs pos-left-top">
+				<li class="list__item hidden-box">
+				<div class="hover-slide">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Facebook">Facebook</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-01">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Dribbble">Dribbble</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-02">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Instagram">Instagram</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-03">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Behance">Behance</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-04">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Twitter">Twitter</a>
+				</div>
+				</li>
+				</ul><!-- social btns end -->
+				</div><!-- anim-img-scale end -->
+				<!-- content start -->
+				<div class="margin-top-20 margin-left-20">
+				<h4 class="subhead-m anim-text-double-fill tr-delay-01" data-text="Sharon Arney">Sharon Arney</h4><br>
+				<p class="headline-xxxxs margin-top-5 anim-text-double-fill invert tr-delay-03" data-text="Project manager">Project manager</p>
+				</div><!-- content end -->
+				</div><!-- swiper-slide end -->
+				<!-- swiper-slide start -->
+				<div class="swiper-slide">
+				<!-- anim-img-scale start -->
+				<div class="anim-img-scale hover-box">
+				<img class="anim-img-scale__inner" src="css/images/team/team_slider/woman-wearing-black-tank-top-sitting-on-gray-stainless-steel-1850178.jpg" alt="Alyse Quintero">
+				<div class="bg-overlay-black"></div>
+				<!-- social btns start -->
+				<ul class="list pos-abs pos-left-top">
+				<li class="list__item hidden-box">
+				<div class="hover-slide">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Facebook">Facebook</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-01">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Dribbble">Dribbble</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-02">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Instagram">Instagram</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-03">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Behance">Behance</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-04">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Twitter">Twitter</a>
+				</div>
+				</li>
+				</ul><!-- social btns end -->
+				</div><!-- anim-img-scale end -->
+				<!-- content start -->
+				<div class="margin-top-20 margin-left-20">
+				<h4 class="subhead-m anim-text-double-fill tr-delay-01" data-text="Alyse Quintero">Alyse Quintero</h4><br>
+				<p class="headline-xxxxs margin-top-5 anim-text-double-fill invert tr-delay-03" data-text="Front-end developer">Front-end developer</p>
+				</div><!-- content end -->
+				</div><!-- swiper-slide end -->
+				<!-- swiper-slide start -->
+				<div class="swiper-slide">
+				<!-- anim-img-scale start -->
+				<div class="anim-img-scale hover-box">
+				<img class="anim-img-scale__inner" src="css/images/team/team_slider/photo-of-woman-leaning-on-wall-2936815.jpg" alt="Ashley Keller">
+				<div class="bg-overlay-black"></div>
+				<!-- social btns start -->
+				<ul class="list pos-abs pos-left-top">
+				<li class="list__item hidden-box">
+				<div class="hover-slide">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Facebook">Facebook</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-01">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Dribbble">Dribbble</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-02">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Instagram">Instagram</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-03">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Behance">Behance</a>
+				</div>
+				</li>
+				<li class="list__item hidden-box">
+				<div class="hover-slide tr-delay-04">
+				<a href="#" class="flip-btn js-pointer-small" data-text="Twitter">Twitter</a>
+				</div>
+				</li>
+				</ul><!-- social btns end -->
+				</div><!-- anim-img-scale end -->
+				<!-- content start -->
+				<div class="margin-top-20 margin-left-20">
+				<h4 class="subhead-m anim-text-double-fill tr-delay-01" data-text="Ashley Keller">Ashley Keller</h4><br>
+				<p class="headline-xxxxs margin-top-5 anim-text-double-fill invert tr-delay-03" data-text="Back-end developer">Back-end developer</p>
+				</div><!-- content end -->
+				</div><!-- swiper-slide end -->
+				</div>*@
+				<!-- swiper-wrapper end -->
+				<!-- swiper-button-prev start -->
+				<div class="swiper-button-prev-box">
+					<div class="swiper-button-prev"></div>
+				</div><!-- swiper-button-prev end -->
+				<!-- swiper-button-next start -->
+				<div class="swiper-button-next-box">
+					<div class="swiper-button-next"></div>
+				</div><!-- swiper-button-next end -->
+				<!-- swiper-pagination start -->
+				<div class="pagination-box">
+					<div class="swiper-pagination counter-pagination"></div>
+				</div><!-- swiper-pagination end -->
+			</div><!-- js-3-view-slider end -->
+		</div><!-- pos-rel end -->
+	</section><!-- team end -->
+	<!-- clients start -->
+	<section class="pos-rel section-bg-dark-1">
+		<!-- pos-rel start -->
+		<div class="pos-rel flex-min-height-100vh">
+			<!-- container start -->
+			<div class="padding-top-bottom-120 container">
+				<!-- title start -->
+				<h2 class="headline-l js-scrollanim">
+					@Model.Value("statisticsTitle")
+				</h2><!-- title end -->
+				<!-- clients-lines start -->
+				@Html.GetBlockListHtml(Model, "statisticsLists", "StatisticsList")
+
+				@*	<ul class="progress js-scrollanim">
+				<!--  Item  -->
+				<li data-name="Students" data-percent="+1500">
+				<svg viewBox="-10 -10 220 220">
+				<g fill="none" stroke-width="10" transform="translate(100,100)">
+				<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)" />
+				<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)" />
+				<path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)" />
+				<path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)" />
+				<path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)" />
+				<path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)" />
+				</g>
+				</svg>
+				<svg viewBox="-10 -10 220 220">
+				<path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="629"></path>
+				</svg>
+				</li>
+
+				<!--  Item  -->
+				<li data-name="Countries" data-percent="+10">
+				<svg viewBox="-10 -10 220 220">
+				<g fill="none" stroke-width="10" transform="translate(100,100)">
+				<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)" />
+				<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)" />
+				<path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)" />
+				<path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)" />
+				<path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)" />
+				<path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)" />
+				</g>
+				</svg>
+				<svg viewBox="-10 -10 220 220">
+				<path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="629"></path>
+				</svg>
+				</li>
+
+				<!--  Item  -->
+				<li data-name="Projects" data-percent="+700">
+				<svg viewBox="-10 -10 220 220">
+				<g fill="none" stroke-width="10" transform="translate(100,100)">
+				<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)" />
+				<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)" />
+				<path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)" />
+				<path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)" />
+				<path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)" />
+				<path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)" />
+				</g>
+				</svg>
+				<svg viewBox="-10 -10 220 220">
+				<path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="629"></path>
+				</svg>
+				</li>
+
+				<!--  Item  -->
+				<li data-name="Happy Clients" data-percent="+1000">
+				<svg viewBox="-10 -10 220 220">
+				<g fill="none" stroke-width="10" transform="translate(100,100)">
+				<path d="M 0,-100 A 100,100 0 0,1 86.6,-50" stroke="url(#cl1)" />
+				<path d="M 86.6,-50 A 100,100 0 0,1 86.6,50" stroke="url(#cl2)" />
+				<path d="M 86.6,50 A 100,100 0 0,1 0,100" stroke="url(#cl3)" />
+				<path d="M 0,100 A 100,100 0 0,1 -86.6,50" stroke="url(#cl4)" />
+				<path d="M -86.6,50 A 100,100 0 0,1 -86.6,-50" stroke="url(#cl5)" />
+				<path d="M -86.6,-50 A 100,100 0 0,1 0,-100" stroke="url(#cl6)" />
+				</g>
+				</svg>
+				<svg viewBox="-10 -10 220 220">
+				<path d="M200,100 C200,44.771525 155.228475,0 100,0 C44.771525,0 0,44.771525 0,100 C0,155.228475 44.771525,200 100,200 C155.228475,200 200,155.228475 200,100 Z" stroke-dashoffset="629"></path>
+				</svg>
+				</li>
+
+				</ul>*@
+				<!--  Defining Angle Gradient Colors  -->
+				<svg width="0" height="0">
+					<defs>
+						<linearGradient id="cl1" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1">
+							<stop stop-color="#10293f" />
+							<stop offset="100%" stop-color="#10293f" />
+						</linearGradient>
+						<linearGradient id="cl2" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0" y2="1">
+							<stop stop-color="#10293f" />
+							<stop offset="100%" stop-color="#10293f" />
+						</linearGradient>
+						<linearGradient id="cl3" gradientUnits="objectBoundingBox" x1="1" y1="0" x2="0" y2="1">
+							<stop stop-color="#10293f" />
+							<stop offset="100%" stop-color="#10293f" />
+						</linearGradient>
+						<linearGradient id="cl4" gradientUnits="objectBoundingBox" x1="1" y1="1" x2="0" y2="0">
+							<stop stop-color="#10293f" />
+							<stop offset="100%" stop-color="#10293f" />
+						</linearGradient>
+						<linearGradient id="cl5" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="0" y2="0">
+							<stop stop-color="#10293f" />
+							<stop offset="100%" stop-color="#10293f" />
+						</linearGradient>
+						<linearGradient id="cl6" gradientUnits="objectBoundingBox" x1="0" y1="1" x2="1" y2="0">
+							<stop stop-color="#10293f" />
+							<stop offset="100%" stop-color="#10293f" />
+						</linearGradient>
+					</defs>
+				</svg>
+
+				<!-- clients-lines end -->
+			</div><!-- container end -->
+		</div><!-- pos-rel end -->
+	</section><!-- clients end -->
+	<!-- testimonials start -->
+	<section class="pos-rel section-bg-light-1" data-midnight="black">
+		<!-- pos-rel start -->
+		<div class="pos-rel flex-min-height-100vh">
+			<!-- padding-top-bottom-120 start -->
+			<div class="padding-top-bottom-120 width-100perc">
+				<!-- title start -->
+				<h2 class="headline-xxl text-color-black text-center hidden-box">
+					<span class="anim-slide js-scrollanim">@Model.Value("TestimonialTitle")</span>
+				</h2><!-- title end -->
+				<!-- js-2-view-slider start -->
+				<div class="js-2-view-slider padding-top-bottom-90 hidden-box pos-rel">
+					<!-- swiper-wrapper start -->
+					@Html.GetBlockListHtml(Model, "testimonialsLists", "TestimonialsList")
+
+					@*<div class="swiper-wrapper js-slider-scroll-anim">
+					<!-- swiper-slide start -->
+					<div class="swiper-slide slide-scale-anim">
+					<div class="margin-left-right-20 padding-left-right-20 padding-top-bottom-40 content-bg-light-2 border-radius-10px">
+					<p class="margin-bottom-30 quote quote_bottom body-text-m text-color-black text-center">
+					At first, I used to see the field of web programming as a distant dream. I watched over and over these free YouTube lessons, and although their content was great, they lacked a step-by-step approach to practice, or an instructor to hear my questions and answer them.
+					But thanks to Array, I have been able to move to a whole new level of knowledge and have succeeded in landing my dream job and achieving the level of income I wished for.
+					</p>
+					<!-- anim-img-scale start -->
+					<div class="anim-img-scale testimonials-author border-radius-50perc">
+					<img class="anim-img-scale__inner" src="css/images/testimonials/woman-wearing-white-and-black-shirt-1388888.jpg" alt="author">
+					</div><!-- anim-img-scale end -->
+					<div class="margin-top-20 text-center">
+					<span class="headline-xxxs text-color-black">Ahmed Abdullah</span><br>
+					<span class="subhead-xxs text-color-888888">Our Studen</span>
+					</div>
+					</div>
+					</div><!-- swiper-slide end -->
+					<!-- swiper-slide start -->
+					<div class="swiper-slide slide-scale-anim">
+					<div class="margin-left-right-20 padding-left-right-20 padding-top-bottom-40 content-bg-light-2 border-radius-10px">
+					<p class="margin-bottom-30 quote quote_bottom body-text-m text-color-black text-center">
+					I faced a problem after university studies, that I could not find a suitable job with a suitable income. The maximum salary I reached was 5,000 Egyptian pounds per month, and this is of course not enough in any way.
+					So I thought about studying AI because I heard it pays great, and my goal was just cash.
+					But the experience of learning with Array changed my perspective and discovered new things that I had never known about myself and my passion. And now, thanks to them, I work in a job I love and get a very nice salary that is more than double the first salary I took.
+					</p>
+					<!-- anim-img-scale start -->
+					<div class="anim-img-scale testimonials-author border-radius-50perc">
+					<img class="anim-img-scale__inner" src="css/images/testimonials/man-standing-near-building-white-black-turtleneck-shirt-874158.jpg" alt="author">
+					</div><!-- anim-img-scale end -->
+					<div class="margin-top-20 text-center">
+					<span class="headline-xxxs text-color-black">Dina El Ezaby</span><br>
+					<span class="subhead-xxs text-color-888888">Our Studen</span>
+					</div>
+					</div>
+					</div><!-- swiper-slide end -->
+					<!-- swiper-slide start -->
+					<div class="swiper-slide slide-scale-anim">
+					<div class="margin-left-right-20 padding-left-right-20 padding-top-bottom-40 content-bg-light-2 border-radius-10px">
+					<p class="margin-bottom-30 quote quote_bottom body-text-m text-color-black text-center">
+					At first, I faced a problem, which was that I could not reconcile my work with the courses that I participated in. But with the Array platform, I did not find this problem at all, thanks to the ability to book a recorded course.
+					This feature helped me to maintain my work without apologies or vacations, and to continue developing my skills at the same time.
+					</p>
+					<!-- anim-img-scale start -->
+					<div class="anim-img-scale testimonials-author border-radius-50perc">
+					<img class="anim-img-scale__inner" src="css/images/testimonials/informal-young-woman-listening-to-music-near-grunge-wall-3771823.jpg" alt="author">
+					</div><!-- anim-img-scale end -->
+					<div class="margin-top-20 text-center">
+					<span class="headline-xxxs text-color-black">Mohamed Samir</span><br>
+					<span class="subhead-xxs text-color-888888">Our Studen</span>
+					</div>
+					</div>
+					</div><!-- swiper-slide end -->
+					<!-- swiper-slide start -->
+					<div class="swiper-slide slide-scale-anim">
+					<div class="margin-left-right-20 padding-left-right-20 padding-top-bottom-40 content-bg-light-2 border-radius-10px">
+					<p class="margin-bottom-30 quote quote_bottom body-text-m text-color-black text-center">Copper mug vexillologist +1 prism iPhone fashion axe portland. Hella quinoa woke blog af umami tacos freegan vinyl snackwave microdosing. Fanny pack direct trade XOXO drinking vinegar. Live-edge kinfolk master cleanse brooklyn meh organic man braid. Actually humblebrag sriracha.</p>
+					<!-- anim-img-scale start -->
+					<div class="anim-img-scale testimonials-author border-radius-50perc">
+					<img class="anim-img-scale__inner" src="css/images/testimonials/photography-of-guy-wearing-yellow-hoodie-1183266.jpg" alt="author">
+					</div><!-- anim-img-scale end -->
+					<div class="margin-top-20 text-center">
+					<span class="headline-xxxs text-color-black">Dwight Bell</span><br>
+					<span class="subhead-xxs text-color-888888">Banquet manager</span>
+					</div>
+					</div>
+					</div><!-- swiper-slide end -->
+					<!-- swiper-slide start -->
+					<div class="swiper-slide slide-scale-anim">
+					<div class="margin-left-right-20 padding-left-right-20 padding-top-bottom-40 content-bg-light-2 border-radius-10px">
+					<p class="margin-bottom-30 quote quote_bottom body-text-m text-color-black text-center">Bushwick tumeric slow-carb photo booth letterpress franzen kombucha tumblr listicle cronut waistcoat mustache. Jean shorts tilde swag cray. Microdosing heirloom wayfarers YOLO, church-key tattooed cred blue bottle viral lyft tacos retro. Bespoke drinking vinegar single-origin.</p>
+					<!-- anim-img-scale start -->
+					<div class="anim-img-scale testimonials-author border-radius-50perc">
+					<img class="anim-img-scale__inner" src="css/images/testimonials/man-standing-on-stairs-1254502.jpg" alt="author">
+					</div><!-- anim-img-scale end -->
+					<div class="margin-top-20 text-center">
+					<span class="headline-xxxs text-color-black">Brian Amos</span><br>
+					<span class="subhead-xxs text-color-888888">Health educator</span>
+					</div>
+					</div>
+					</div><!-- swiper-slide end -->
+					</div>*@
+
+					<!-- swiper-wrapper end -->
+					<!-- swiper-button-prev start -->
+					<div class="swiper-button-prev-box">
+						<div class="swiper-button-prev black"></div>
+					</div><!-- swiper-button-prev end -->
+					<!-- swiper-button-next start -->
+					<div class="swiper-button-next-box">
+						<div class="swiper-button-next black"></div>
+					</div><!-- swiper-button-next end -->
+					<!-- swiper-pagination start -->
+					<div class="pagination-box">
+						<div class="swiper-pagination counter-pagination black"></div>
+					</div><!-- swiper-pagination end -->
+				</div><!-- js-2-view-slider end -->
+			</div><!-- padding-top-bottom-120 end -->
+		</div><!-- pos-rel end -->
+	</section><!-- testimonials end -->
+	<!-- video content start -->
+	<div class="pos-rel bg-img-cover height-100vh"
+	@{
+		var sessionVideoImage = Model.Value<IPublishedContent>("sessionVideoImage");
+	}
+		 style="background-image:url(@(sessionVideoImage?.Url() ?? "fallback-image-url"))">
+		<div class="bg-overlay-black"></div>
+		<div class="pos-rel height-100perc">
+			@{
+				var sessionVideo = Model.Value<Link>("sessionVideo");
+
+				if (sessionVideo != null)
+				{
+					<a href="@sessionVideo.Url class="play-button js-popup-youtube js-pointer-large">
+						<span class="play-button__inner"></span>
+					</a>
+				}
+			}
+
+
+
+		</div>
+	</div><!-- video content end -->
+	<!-- latest news start -->
+	<section class="pos-rel section-bg-light-2" data-midnight="black">
+		<!-- pos-rel start -->
+		<div class="pos-rel padding-top-bottom-120">
+			<!-- container start -->
+			<div class="container small">
+				<!-- title start -->
+				<h2 class="headline-xxl text-color-black text-center hidden-box">
+					<span class="anim-slide js-scrollanim">
+						Our <span class="text-color-red">Journey</span>
+					</span>
+				</h2><!-- title end -->
+				@Html.GetBlockListHtml(Model, "ourJourneyLists", "OurJourneyList")
+
+			</div><!-- container end -->
+		</div><!-- pos-rel end -->
+	</section><!-- latest news end -->
+	<!-- pricing start -->
+	<section class="pos-rel section-bg-dark-1">
+		<!-- pos-rel start -->
+		<div class="pos-rel padding-top-bottom-120">
+			<!-- title start -->
+			<h2 class="headline-xxl text-center hidden-box js-scrollanim">
+				<span class="anim-slide">
+					Our <span class="text-color-red">Pricing</span>
+				</span>
+			</h2><!-- title end -->
+			<!-- flex-container start -->
+			<div class="container small flex-container flex-justify-center padding-top-30">
+				<!-- column start -->
+				<div class="four-columns column-50-100 padding-top-60">
+					<div class="column-l-r-margin-10 price-top-offset content-bg-dark-2 border-radius-10px hidden-box">
+						<div class="text-center content-bg-red">
+							<h3 class="subhead-m padding-top-bottom-20">@Model.Value("basicPriceTitle")</h3>
+						</div>
+						<h4 class="text-center padding-top-bottom-50">
+							<span class="headline-l">$@Model.Value("basicPrice")</span><br>
+							<span class="subhead-xs">Per month</span>
+						</h4>
+
+						@Html.GetBlockListHtml(Model, "basicPriceLists", "BasicPriceList")
+
+						<!-- accordion start -->
+						@*	<div class="accordion js-accordion margin-left-right-20">
+						<!-- accordion__tab start -->
+						<div class="accordion__tab js-accordion-tab">
+						<div class="accordion__btn js-accordion-btn js-pointer-large">
+						<h6 class="accordion__btn-title headline-xxxxs">Marketing</h6>
+						</div>
+						<div class="accordion__content js-accordion-content">
+						<!-- list start -->
+						<ul class="list list_center text-color-dadada subhead-xxs">
+						<li class="list__item check red">Copper mug</li>
+						<li class="list__item check red">Vexillologist +1</li>
+						<li class="list__item check red">Prism iPhone</li>
+						<li class="list__item check red">Hella quinoa</li>
+						<li class="list__item check red">Blog af umami</li>
+						<li class="list__item x opacity-05">Vinyl snackwave</li>
+						<li class="list__item x opacity-05">XOXO drinking</li>
+						</ul><!-- list end -->
+						</div>
+						</div><!-- accordion__tab end -->
+						<!-- accordion__tab start -->
+						<div class="accordion__tab js-accordion-tab">
+						<div class="accordion__btn js-accordion-btn js-pointer-large">
+						<h6 class="accordion__btn-title headline-xxxxs">Branding</h6>
+						</div>
+						<div class="accordion__content js-accordion-content">
+						<!-- list start -->
+						<ul class="list list_center text-color-dadada subhead-xxs">
+						<li class="list__item check red">Copper mug</li>
+						<li class="list__item check red">Vexillologist +1</li>
+						<li class="list__item check red">Prism iPhone</li>
+						<li class="list__item check red">Hella quinoa</li>
+						<li class="list__item check red">Blog af umami</li>
+						<li class="list__item x opacity-05">Vinyl snackwave</li>
+						<li class="list__item x opacity-05">XOXO drinking</li>
+						</ul><!-- list end -->
+						</div>
+						</div><!-- accordion__tab end -->
+						<!-- accordion__tab start -->
+						<div class="accordion__tab js-accordion-tab">
+						<div class="accordion__btn js-accordion-btn js-pointer-large">
+						<h6 class="accordion__btn-title headline-xxxxs">Photoshoot</h6>
+						</div>
+						<div class="accordion__content js-accordion-content">
+						<!-- list start -->
+						<ul class="list list_center text-color-dadada subhead-xxs">
+						<li class="list__item check red">Copper mug</li>
+						<li class="list__item check red">Vexillologist +1</li>
+						<li class="list__item check red">Prism iPhone</li>
+						<li class="list__item check red">Hella quinoa</li>
+						<li class="list__item check red">Blog af umami</li>
+						<li class="list__item x opacity-05">Vinyl snackwave</li>
+						<li class="list__item x opacity-05">XOXO drinking</li>
+						</ul><!-- list end -->
+						</div>
+						</div><!-- accordion__tab end -->
+						<!-- accordion__tab start -->
+						<div class="accordion__tab js-accordion-tab">
+						<div class="accordion__btn js-accordion-btn js-pointer-large">
+						<h6 class="accordion__btn-title headline-xxxxs">Web development</h6>
+						</div>
+						<div class="accordion__content js-accordion-content">
+						<!-- list start -->
+						<ul class="list list_center text-color-dadada subhead-xxs">
+						<li class="list__item check red">Copper mug</li>
+						<li class="list__item check red">Vexillologist +1</li>
+						<li class="list__item check red">Prism iPhone</li>
+						<li class="list__item check red">Hella quinoa</li>
+						<li class="list__item check red">Blog af umami</li>
+						<li class="list__item x opacity-05">Vinyl snackwave</li>
+						<li class="list__item x opacity-05">XOXO drinking</li>
+						</ul><!-- list end -->
+						</div>
+						</div><!-- accordion__tab end -->
+						</div>*@
+						<!-- accordion end -->
+						<div class="padding-top-bottom-50 text-center">
+
+							@{
+								var SignUp = Model.Value<Link>("basicPriceSignUp");
+
+								if (SignUp != null)
+								{
+									<a href="@SignUp.Url" class="ellipse-btn js-pointer-large">@SignUp.Name</a>
+								}
+							}
+						</div>
+					</div>
+				</div><!-- column end -->
+				<!-- column start -->
+				<div class="four-columns column-50-100 padding-top-60">
+					<div class="column-l-r-margin-10 content-bg-dark-2 border-radius-10px hidden-box">
+						<div class="text-center content-bg-red">
+							<h3 class="subhead-m padding-top-bottom-40">@Model.Value("standardPriceTitle")</h3>
+						</div>
+						<h4 class="text-center padding-top-bottom-50">
+							<span class="headline-l">$@Model.Value("standardPrice")</span><br>
+							<span class="subhead-xs">Per month</span>
+						</h4>
+
+						@Html.GetBlockListHtml(Model, "standardPriceLists", "StandardPriceList")
+
+
+						<!-- accordion start -->
+						@*		<div class="accordion js-accordion margin-left-right-20">
+						<!-- accordion__tab start -->
+						<div class="accordion__tab js-accordion-tab">
+						<div class="accordion__btn js-accordion-btn js-pointer-large">
+						<h6 class="accordion__btn-title headline-xxxxs">Marketing</h6>
+						</div>
+						<div class="accordion__content js-accordion-content">
+						<!-- list start -->
+						<ul class="list list_center text-color-dadada subhead-xxs">
+						<li class="list__item check red">Copper mug</li>
+						<li class="list__item check red">Vexillologist +1</li>
+						<li class="list__item check red">Prism iPhone</li>
+						<li class="list__item check red">Hella quinoa</li>
+						<li class="list__item check red">Blog af umami</li>
+						<li class="list__item check red">Vinyl snackwave</li>
+						<li class="list__item x opacity-05">XOXO drinking</li>
+						</ul><!-- list end -->
+						</div>
+						</div><!-- accordion__tab end -->
+						<!-- accordion__tab start -->
+						<div class="accordion__tab js-accordion-tab">
+						<div class="accordion__btn js-accordion-btn js-pointer-large">
+						<h6 class="accordion__btn-title headline-xxxxs">Branding</h6>
+						</div>
+						<div class="accordion__content js-accordion-content">
+						<!-- list start -->
+						<ul class="list list_center text-color-dadada subhead-xxs">
+						<li class="list__item check red">Copper mug</li>
+						<li class="list__item check red">Vexillologist +1</li>
+						<li class="list__item check red">Prism iPhone</li>
+						<li class="list__item check red">Hella quinoa</li>
+						<li class="list__item check red">Blog af umami</li>
+						<li class="list__item check red">Vinyl snackwave</li>
+						<li class="list__item x opacity-05">XOXO drinking</li>
+						</ul><!-- list end -->
+						</div>
+						</div><!-- accordion__tab end -->
+						<!-- accordion__tab start -->
+						<div class="accordion__tab js-accordion-tab">
+						<div class="accordion__btn js-accordion-btn js-pointer-large">
+						<h6 class="accordion__btn-title headline-xxxxs">Photoshoot</h6>
+						</div>
+						<div class="accordion__content js-accordion-content">
+						<!-- list start -->
+						<ul class="list list_center text-color-dadada subhead-xxs">
+						<li class="list__item check red">Copper mug</li>
+						<li class="list__item check red">Vexillologist +1</li>
+						<li class="list__item check red">Prism iPhone</li>
+						<li class="list__item check red">Hella quinoa</li>
+						<li class="list__item check red">Blog af umami</li>
+						<li class="list__item check red">Vinyl snackwave</li>
+						<li class="list__item x opacity-05">XOXO drinking</li>
+						</ul><!-- list end -->
+						</div>
+						</div><!-- accordion__tab end -->
+						<!-- accordion__tab start -->
+						<div class="accordion__tab js-accordion-tab">
+						<div class="accordion__btn js-accordion-btn js-pointer-large">
+						<h6 class="accordion__btn-title headline-xxxxs">Web development</h6>
+						</div>
+						<div class="accordion__content js-accordion-content">
+						<!-- list start -->
+						<ul class="list list_center text-color-dadada subhead-xxs">
+						<li class="list__item check red">Copper mug</li>
+						<li class="list__item check red">Vexillologist +1</li>
+						<li class="list__item check red">Prism iPhone</li>
+						<li class="list__item check red">Hella quinoa</li>
+						<li class="list__item check red">Blog af umami</li>
+						<li class="list__item check red">Vinyl snackwave</li>
+						<li class="list__item x opacity-05">XOXO drinking</li>
+						</ul><!-- list end -->
+						</div>
+						</div><!-- accordion__tab end -->
+						</div>
+						*@
+						<!-- accordion end -->
+						<div class="padding-top-bottom-50 text-center">
+
+							@{
+								var StandardSignUp = Model.Value<Link>("standardPriceSignUp");
+
+								if (StandardSignUp != null)
+								{
+									<a href="@StandardSignUp.Url" class="ellipse-btn ellipse-btn_red js-pointer-large">@StandardSignUp.Name</a>
+								}
+							}
+
+
+							@*	<a href="#" class="ellipse-btn ellipse-btn_red js-pointer-large">sign up</a>*@
+						</div>
+					</div>
+				</div><!-- column end -->
+				<!-- column start -->
+				<div class="four-columns column-50-100 padding-top-60">
+					<div class="column-l-r-margin-10 price-top-offset content-bg-dark-2 border-radius-10px hidden-box">
+						<div class="text-center content-bg-red">
+							<h3 class="subhead-m padding-top-bottom-20">@Model.Value("extendedPriceTitle")</h3>
+						</div>
+						<h4 class="text-center padding-top-bottom-50">
+							<span class="headline-l">$@Model.Value("extendedPrice")</span><br>
+							<span class="subhead-xs">Per month</span>
+						</h4>
+
+						@Html.GetBlockListHtml(Model, "extendedPriceLists", "ExtendedPriceList")
+
+						<!-- accordion start -->
+						@*	<div class="accordion js-accordion margin-left-right-20">
+						<!-- accordion__tab start -->
+						<div class="accordion__tab js-accordion-tab">
+						<div class="accordion__btn js-accordion-btn js-pointer-large">
+						<h6 class="accordion__btn-title headline-xxxxs">Marketing</h6>
+						</div>
+						<div class="accordion__content js-accordion-content">
+						<!-- list start -->
+						<ul class="list list_center text-color-dadada subhead-xxs">
+						<li class="list__item check red">Copper mug</li>
+						<li class="list__item check red">Vexillologist +1</li>
+						<li class="list__item check red">Prism iPhone</li>
+						<li class="list__item check red">Hella quinoa</li>
+						<li class="list__item check red">Blog af umami</li>
+						<li class="list__item check red">Vinyl snackwave</li>
+						<li class="list__item check red">XOXO drinking</li>
+						</ul><!-- list end -->
+						</div>
+						</div><!-- accordion__tab end -->
+						<!-- accordion__tab start -->
+						<div class="accordion__tab js-accordion-tab">
+						<div class="accordion__btn js-accordion-btn js-pointer-large">
+						<h6 class="accordion__btn-title headline-xxxxs">Branding</h6>
+						</div>
+						<div class="accordion__content js-accordion-content">
+						<!-- list start -->
+						<ul class="list list_center text-color-dadada subhead-xxs">
+						<li class="list__item check red">Copper mug</li>
+						<li class="list__item check red">Vexillologist +1</li>
+						<li class="list__item check red">Prism iPhone</li>
+						<li class="list__item check red">Hella quinoa</li>
+						<li class="list__item check red">Blog af umami</li>
+						<li class="list__item check red">Vinyl snackwave</li>
+						<li class="list__item check red">XOXO drinking</li>
+						</ul><!-- list end -->
+						</div>
+						</div><!-- accordion__tab end -->
+						<!-- accordion__tab start -->
+						<div class="accordion__tab js-accordion-tab">
+						<div class="accordion__btn js-accordion-btn js-pointer-large">
+						<h6 class="accordion__btn-title headline-xxxxs">Photoshoot</h6>
+						</div>
+						<div class="accordion__content js-accordion-content">
+						<!-- list start -->
+						<ul class="list list_center text-color-dadada subhead-xxs">
+						<li class="list__item check red">Copper mug</li>
+						<li class="list__item check red">Vexillologist +1</li>
+						<li class="list__item check red">Prism iPhone</li>
+						<li class="list__item check red">Hella quinoa</li>
+						<li class="list__item check red">Blog af umami</li>
+						<li class="list__item check red">Vinyl snackwave</li>
+						<li class="list__item check red">XOXO drinking</li>
+						</ul><!-- list end -->
+						</div>
+						</div><!-- accordion__tab end -->
+						<!-- accordion__tab start -->
+						<div class="accordion__tab js-accordion-tab">
+						<div class="accordion__btn js-accordion-btn js-pointer-large">
+						<h6 class="accordion__btn-title headline-xxxxs">Web development</h6>
+						</div>
+						<div class="accordion__content js-accordion-content">
+						<!-- list start -->
+						<ul class="list list_center text-color-dadada subhead-xxs">
+						<li class="list__item check red">Copper mug</li>
+						<li class="list__item check red">Vexillologist +1</li>
+						<li class="list__item check red">Prism iPhone</li>
+						<li class="list__item check red">Hella quinoa</li>
+						<li class="list__item check red">Blog af umami</li>
+						<li class="list__item check red">Vinyl snackwave</li>
+						<li class="list__item check red">XOXO drinking</li>
+						</ul><!-- list end -->
+						</div>
+						</div><!-- accordion__tab end -->
+						</div>
+						*@<!-- accordion end -->
+						<div class="padding-top-bottom-50 text-center">
+
+							@{
+								var ExtendedSignUp = Model.Value<Link>("extendedPriceSignUp");
+
+								if (ExtendedSignUp != null)
+								{
+									<a href="@ExtendedSignUp.Url" class="ellipse-btn js-pointer-large">@ExtendedSignUp.Name</a>
+								}
+							}
+
+						</div>
+					</div>
+				</div><!-- column end -->
+			</div><!-- flex-container end -->
+		</div><!-- pos-rel end -->
+	</section><!-- pricing end -->
+</main><!-- main end -->

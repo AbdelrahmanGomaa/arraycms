@@ -1,0 +1,128 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.StudentsProjects>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "MasterTemplate.cshtml";
+
+}
+
+
+
+
+@{
+	var selection = Umbraco.Content(Guid.Parse("30f95ed3-de1e-4eba-85a9-9e0e73e38a0c"))
+    .ChildrenOfType("project")
+    .Where(x => x.IsVisible());
+}
+
+
+
+
+
+@*
+@{
+	var selection = Umbraco.Content(Guid.Parse("2666ee3e-8020-4516-865b-917947cd26d0"))
+    .ChildrenOfType("project")
+    .Where(x => x.IsVisible());
+}
+
+*@
+
+
+<!-- one-page-slider start -->
+			<section class="lines-section pos-rel anim-lines section-bg-dark-1 js-parallax-slider one-page-slider">
+				<!-- swiper-wrapper start -->
+				<div class="swiper-wrapper">
+				    
+				    
+				    
+				    
+				    
+				 	@foreach (var item in selection)
+                	{
+                	
+   
+				     var ProjectImage = item.Value<IPublishedContent>("projectImage");
+				    
+					<!-- swiper-slide start -->
+					<div class="swiper-slide">
+						<!-- background start -->
+						<div class="swiper-parallax-bg-box" data-swiper-parallax-y="50%">
+							<div class="bg-img-cover height-100perc" style="background-image: url(@ProjectImage.Url());"></div>
+							<div class="bg-overlay-black"></div>
+						</div><!-- background end -->
+
+						<div class="lines-container pos-rel no-lines d-flex flex-center-center height-100perc" data-swiper-parallax-y="60%">
+							<!-- title start -->
+							<h2 class="headline-xxxxl container small hidden-box">
+								<a href="project_drone.html" class="anim-slide js-pointer-large js-animsition-link">@item.Value("projectTitle")</a>
+							</h2><!-- title end -->
+
+							<!-- portfolio-slider-details start -->
+							<div class="flex-container portfolio-details">
+								<div class="four-columns column-50-100 padding-bottom-1 text-center">
+									<span class="hidden-box d-inline-block">
+										<span class="subhead-xxs anim-reveal">@item.Value("projectCategory")</span>
+									</span>
+								</div>
+								<div class="four-columns column-50-100 padding-bottom-1 text-center">
+									<span class="hidden-box d-inline-block">
+										<span class="subhead-xxs anim-reveal tr-delay-02">@item.Value("projectType")</span>
+									</span>
+								</div>
+								<div class="four-columns column-50-100 padding-bottom-1 text-center">
+									<span class="hidden-box d-inline-block">
+										<span class="subhead-xxs anim-reveal tr-delay-04">@item.Value("projectDate")</span>
+									</span>
+								</div>
+							</div><!-- portfolio-slider-details end -->
+
+							<!-- button start -->
+							<div class="pos-abs pos-bottom-center">
+								<div class="anim-fade tr-delay-03">
+									<a href="@item.Url()" class="border-btn js-pointer-large js-animsition-link">
+										<span class="border-btn__inner">Explore</span>
+										<span class="border-btn__lines-1"></span>
+										<span class="border-btn__lines-2"></span>
+									</a>
+								</div>
+							</div><!-- button end -->
+						</div>
+					</div><!-- swiper-slide end -->
+
+
+	                }
+
+
+
+
+					
+					
+					
+					
+					
+				</div><!-- swiper-wrapper end -->
+
+				<!-- swiper-button-prev start -->
+				<div class="swiper-button-prev-box after-preloader-anim">
+					<div class="anim-fade">
+						<div class="swiper-button-prev"></div>
+					</div>
+				</div><!-- swiper-button-prev end -->
+				<!-- swiper-button-next start -->
+				<div class="swiper-button-next-box after-preloader-anim">
+					<div class="anim-fade tr-delay-03">
+						<div class="swiper-button-next"></div>
+					</div>
+				</div><!-- swiper-button-next end -->
+
+				<!-- swiper-pagination start -->
+				<div class="pagination-box after-preloader-anim">
+					<div class="anim-fade tr-delay-06">
+						<div class="swiper-pagination counter-pagination"></div>
+					</div>
+				</div><!-- swiper-pagination end -->
+
+				<!-- lines-container -->
+				<div class="lines-container lines-pos-abs anim-lines"></div>
+			</section><!-- one-page-slider end -->

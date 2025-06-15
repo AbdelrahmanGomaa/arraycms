@@ -1,0 +1,48 @@
+﻿@using Umbraco.Cms.Web.Common;
+@using Umbraco.Extensions
+@using Umbraco.Cms.Web.Common.PublishedModels
+@using Umbraco.Cms.Web.Common.Views
+@using Umbraco.Cms.Core.Models.PublishedContent
+
+@using ArrayCMS.Controllers	
+@using Umbraco.Cms.Core.Models
+@model ArrayCMS.Models.ContactFormViewModel
+
+@inject UmbracoHelper umbracoHelper
+
+@*@umbracoHelper.GetDictionaryValue("")*@
+
+@using (Html.BeginUmbracoForm<ContactFormController>(nameof(ContactFormController.SubmitAsync), null, new { @name = "formobrsv" ,@id = "send", @class="flex-container padding-top-90" }))
+{
+		<!-- column start -->
+		<div class="four-columns">
+			<div class="column-r-margin-10">
+			<input asp-for="FirstName" type="text" placeholder="Enter your First name" id="first_name" required class="form-input js-pointer-small">
+			</div>
+		</div><!-- column end -->
+		<!-- column start -->
+		<div class="four-columns">
+			<div class="column-l-r-margin-5">
+			<input asp-for="SecondName" type="text" placeholder="Enter your last name" id="last_name" required class="form-input js-pointer-small">
+			</div>
+		</div><!-- column end -->
+		<!-- column start -->
+		<div class="four-columns">
+			<div class="column-l-margin-10">
+			<input asp-for="Email" type="email" placeholder="Enter your email address" id="email" required class="form-input js-pointer-small">
+			</div>
+		</div><!-- column end -->
+		<!-- column start -->
+		<div class="twelve-columns">
+		<textarea asp-for="Message" placeholder="Enter your message" id="message" required class="form-input js-pointer-small"></textarea>
+		</div><!-- column end -->
+		<!-- column start -->
+	<div class="twelve-columns text-center padding-top-90">
+		<button id="send" type="submit" class="border-btn js-pointer-large">
+			<span class="border-btn__inner">submit</span>
+		</button>
+	</div>
+	
+
+	<!-- flex-container end -->
+}

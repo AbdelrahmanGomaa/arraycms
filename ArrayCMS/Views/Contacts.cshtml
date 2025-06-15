@@ -1,0 +1,317 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Contacts>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+
+@{
+	Layout = "MasterTemplate.cshtml";
+}
+
+<!-- pos-rel start -->
+<section id="up" class="pos-rel js-parallax-bg" style="background-image:url(../css/images/backgrounds/kal-visuals--UG2O1U2EfY-unsplash.jpg)">
+	<!-- bg-overlay -->
+	<div class="bg-overlay-black"></div>
+	<!-- pos-rel start -->
+	<div class="pos-rel flex-min-height-100vh">
+		<div class="padding-top-bottom-120 container small after-preloader-anim">
+			<!-- title start -->
+			<h2 class="headline-xl">
+				@Model.Value("contactsHeaderTitle")
+			</h2><!-- title end -->
+			<p class="subhead-xs text-color-dadada margin-top-20 anim-fade tr-delay-04">@Model.Value("contactsHeaderDescription")</p>
+		</div>
+	</div><!-- pos-rel end -->
+</section><!-- pos-rel end -->
+<!-- contact us start -->
+<section id="down" class="pos-rel section-bg-dark-1">
+	<!-- pos-rel start -->
+	<div class="pos-rel flex-min-height-100vh">
+		<!-- container start -->
+		<div class="padding-top-bottom-120 container">
+			<!-- content start -->
+			<div class="js-scrollanim">
+				<h2 class="headline-l">
+					@Model.Value("contentTitle")
+				</h2>
+				<p class="body-text-s margin-top-20 anim-text-reveal tr-delay-04">
+					@Model.Value("contentDescription")
+				</p>
+			</div><!-- content end -->
+			<!-- flex-container start -->
+			<div class="flex-container padding-top-30">
+				<!-- column start -->
+				<div class="four-columns column-50-100 padding-top-60">
+					<div class="column-r-margin-20 js-scrollanim">
+						<p class="headline-xxxxs anim-text-double-fill invert" data-text="Email us">
+							@Model.Value("contactsEmailTitle")
+						</p>
+						<div class="padding-top-20">
+							<h6 class="anim-fade tr-delay-01">
+
+								@{
+									var Aboutlink = Model.Value<Link>("contactsEmail1");
+
+									if (Aboutlink != null)
+									{
+										<a href="@Aboutlink.Url" class="subhead-xxs text-color-dadada text-hover-to-red js-pointer-small">@Aboutlink.Name</a>
+									}
+								}
+
+							</h6><br>
+							<h6 class="anim-fade tr-delay-02">
+
+								@{
+									var Aboutlink2 = Model.Value<Link>("contactsEmail2");
+
+									if (Aboutlink2 != null)
+									{
+										<a href="@Aboutlink2.Url" class="subhead-xxs text-color-dadada text-hover-to-red js-pointer-small">@Aboutlink2.Name</a>
+									}
+								}
+
+
+							</h6><br>
+							<h6 class="anim-fade tr-delay-03">
+
+
+								@{
+									var Aboutlink3 = Model.Value<Link>("contactsEmail3");
+
+									if (Aboutlink3 != null)
+									{
+										<a href="@Aboutlink3.Url" class="subhead-xxs text-color-dadada text-hover-to-red js-pointer-small">@Aboutlink3.Name</a>
+									}
+								}
+
+
+
+							</h6>
+						</div>
+					</div>
+				</div><!-- column end -->
+				<!-- column start -->
+				<div class="four-columns column-50-100 padding-top-60">
+					<div class="column-r-margin-20 js-scrollanim">
+						<p class="headline-xxxxs anim-text-double-fill invert" data-text="Visit us">@Model.Value("contactsVisitUs")</p>
+						<h6 class="list list_margin-1px padding-top-20 text-color-b0b0b0">
+							@Model.Value("contactsVisitUsDescription")
+						</h6>
+						<div class="padding-top-10 anim-fade tr-delay-04">
+
+							@{
+								var Locationlink = Model.Value<Link>("contactsLocation");
+
+								if (Locationlink != null)
+								{
+									<a href="@Locationlink.Url" class="subhead-xxs text-color-dadada text-hover-to-red js-pointer-small">@Locationlink.Name</a>
+								}
+							}
+
+
+						</div>
+					</div>
+				</div><!-- column end -->
+				<!-- column start -->
+				<div class="four-columns column-50-100 padding-top-60">
+					<div class="column-r-margin-20 js-scrollanim">
+						<p class="headline-xxxxs anim-text-double-fill invert" data-text="Call us">@Model.Value("contactsCallUsTitle")</p>
+						<div class="padding-top-20">
+							<h6 class="anim-fade tr-delay-01">
+
+
+								@{
+									var CallUslink = Model.Value<Link>("callUsPhoneNo1");
+
+									if (Locationlink != null)
+									{
+										<a href="@CallUslink.Url" class="subhead-xxs text-color-dadada text-hover-to-red js-pointer-small">@CallUslink.Name</a>
+									}
+								}
+
+
+
+							</h6><br>
+							<h6 class="anim-fade tr-delay-02">
+
+								@{
+									var CallUslink2 = Model.Value<Link>("callUsPhoneNo2");
+
+									if (CallUslink2 != null)
+									{
+										<a href="@CallUslink2.Url" class="subhead-xxs text-color-dadada text-hover-to-red js-pointer-small">@CallUslink2.Name</a>
+									}
+								}
+
+
+							</h6>
+						</div>
+					</div>
+				</div><!-- column end -->
+			</div><!-- flex-container end -->
+			<!-- social btns start -->
+			<div class="padding-top-90">
+				<ul class="list list_row list_margin-30px js-scrollanim">
+					<li class="list__item anim-fade">
+
+						@{
+							var contactUsFacebook = Model.Value<Link>("contactUsFacebook");
+
+							if (contactUsFacebook != null)
+							{
+								<a href="@contactUsFacebook.Url" class="fill-btn text-color-979797 js-pointer-small" data-text="Facebook">@contactUsFacebook.Name</a>
+							}
+						}
+
+					</li>
+
+
+					<li class="list__item anim-fade tr-delay-01">
+
+						@{
+							var contactUsDribble = Model.Value<Link>("contactUsDribble");
+
+							if (contactUsDribble != null)
+							{
+								<a href="@contactUsDribble.Url" class="fill-btn text-color-979797 js-pointer-small" data-text="Dribbble">@contactUsDribble.Name</a>
+							}
+						}
+
+
+					</li>
+					<li class="list__item anim-fade tr-delay-02">
+
+						@{
+							var contactUsInstagram = Model.Value<Link>("contactUsInstagram");
+
+							if (contactUsInstagram != null)
+							{
+								<a href="@contactUsInstagram.Url" class="fill-btn text-color-979797 js-pointer-small" data-text="Instagram">@contactUsInstagram.Name</a>
+							}
+						}
+
+
+					</li>
+					<li class="list__item anim-fade tr-delay-03">
+
+						@{
+							var contactUsYoutube = Model.Value<Link>("contactUsYoutube");
+
+							if (contactUsYoutube != null)
+							{
+								<a href="@contactUsYoutube.Url" class="fill-btn text-color-979797 js-pointer-small" data-text="Youtube">@contactUsYoutube.Name</a>
+							}
+						}
+
+					</li>
+					<li class="list__item anim-fade tr-delay-04">
+
+						@{
+							var contactUsBehance = Model.Value<Link>("contactUsBehance");
+
+							if (contactUsBehance != null)
+							{
+								<a href="@contactUsBehance.Url" class="fill-btn text-color-979797 js-pointer-small" data-text="Behance">@contactUsBehance.Name</a>
+							}
+						}
+
+					</li>
+					<li class="list__item anim-fade tr-delay-05">
+
+						@{
+							var contactUsTwitter = Model.Value<Link>("contactUsTwitter");
+
+							if (contactUsTwitter != null)
+							{
+								<a href="@contactUsTwitter.Url" class="fill-btn text-color-979797 js-pointer-small" data-text="Twitter">@contactUsTwitter.Name</a>
+							}
+						}
+
+					</li>
+				</ul>
+			</div><!-- social btns end -->
+		</div><!-- container end -->
+	</div><!-- pos-rel end -->
+</section><!-- contact us end -->
+<!-- form section start -->
+
+<section class="pos-rel bg-img-cover"
+@{
+	var ContactsHeaderImg = Model.Value<MediaWithCrops>("contactUsImg");
+}
+		 style="background-image:url(@ContactsHeaderImg.MediaUrl())">
+	<!-- bg-overlay -->
+	<!-- bg-overlay -->
+	<div class="bg-overlay-black"></div>
+	<!-- pos-rel start -->
+	<div class="pos-rel flex-min-height-100vh">
+		<!-- container start -->
+		<div class="container small padding-top-bottom-120 form-box">
+			<h4 class="headline-xxxxs text-center">@Model.Value("formTitle")</h4>
+			<!-- flex-container start -->
+			@(await Component.InvokeAsync("ContactForm"))
+
+			@* 						<form action="#" method="post" name="formobrsv" id="send_form" class="flex-container padding-top-90">
+			<!-- column start -->
+			<div class="four-columns">
+			<div class="column-r-margin-10">
+			<input type="text" name="first_name" placeholder="Enter your name" id="first_name" required class="form-input js-pointer-small">
+			</div>
+			</div><!-- column end -->
+			<!-- column start -->
+			<div class="four-columns">
+			<div class="column-l-r-margin-5">
+			<input type="text" name="last_name" placeholder="Enter your last name" id="last_name" required class="form-input js-pointer-small">
+			</div>
+			</div><!-- column end -->
+			<!-- column start -->
+			<div class="four-columns">
+			<div class="column-l-margin-10">
+			<input type="email" name="email" placeholder="Enter your email address" id="email" required class="form-input js-pointer-small">
+			</div>
+			</div><!-- column end -->
+			<!-- column start -->
+			<div class="twelve-columns">
+			<textarea name="message" placeholder="Enter your message" id="message" required class="form-input js-pointer-small"></textarea>
+			</div><!-- column end -->
+			<!-- column start -->
+			<div class="twelve-columns text-center padding-top-90">
+			<button id="send" class="border-btn js-pointer-large">
+			<span class="border-btn__inner">submit</span>
+			<span class="btn-wait">Wait</span>
+			<span class="border-btn__lines-1"></span>
+			<span class="border-btn__lines-2"></span>
+			</button>
+			</div><!-- column end -->
+			</form><!-- flex-container end -->
+			*@
+		</div><!-- container end -->
+		<!-- alert start -->
+		<div class="js-popup-fade" id="m_sent">
+			<div class="js-popup">
+				<div class="popup-icon">
+					<i class="fas fa-check"></i>
+				</div>
+				<p class="popup-alert headline-xs">
+					Thank you!<br>
+					Your submission<br>
+					has been received!
+				</p>
+				<div class="js-popup-close js-pointer-large">
+					<div class="flip-btn" data-text="Close">Close</div>
+				</div>
+			</div>
+		</div><!-- alert end -->
+		<!-- alert start -->
+		<div class="js-popup-fade" id="m_err">
+			<div class="js-popup">
+				<div class="popup-icon">
+					<i class="fas fa-times"></i>
+				</div>
+				<p class="popup-alert headline-xs">Error</p>
+				<div class="js-popup-close js-pointer-large">
+					<div class="flip-btn" data-text="Close">Close</div>
+				</div>
+			</div>
+		</div><!-- alert end -->
+	</div><!-- pos-rel end -->
+</section><!-- form section end -->

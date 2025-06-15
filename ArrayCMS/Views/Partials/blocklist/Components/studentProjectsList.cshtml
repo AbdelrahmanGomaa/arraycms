@@ -1,0 +1,54 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks;
+
+@{   
+    var content = (ContentModels.StudentProjectsList)Model.Content;
+}
+
+
+					<div class="swiper-slide">
+						<!-- background start -->
+						<div class="swiper-parallax-bg-box" data-swiper-parallax-y="50%">
+							<div class="bg-img-cover height-100perc" style="background-image: url(css/images/projects/speakers/revolt-eeEsmrTVH7Q-unsplash.jpg);"></div>
+							<div class="bg-overlay-black"></div>
+						</div><!-- background end -->
+
+						<div class="lines-container pos-rel no-lines d-flex flex-center-center height-100perc" data-swiper-parallax-y="60%">
+							<!-- title start -->
+							<h2 class="headline-xxxxl container small hidden-box">
+								<a href="project_drone.html" class="anim-slide js-pointer-large js-animsition-link">Speakers</a>
+							</h2><!-- title end -->
+
+							<!-- portfolio-slider-details start -->
+							<div class="flex-container portfolio-details">
+								<div class="four-columns column-50-100 padding-bottom-1 text-center">
+									<span class="hidden-box d-inline-block">
+										<span class="subhead-xxs anim-reveal">Photoshoot</span>
+									</span>
+								</div>
+								<div class="four-columns column-50-100 padding-bottom-1 text-center">
+									<span class="hidden-box d-inline-block">
+										<span class="subhead-xxs anim-reveal tr-delay-02">Marketing</span>
+									</span>
+								</div>
+								<div class="four-columns column-50-100 padding-bottom-1 text-center">
+									<span class="hidden-box d-inline-block">
+										<span class="subhead-xxs anim-reveal tr-delay-04">Paris 2020</span>
+									</span>
+								</div>
+							</div><!-- portfolio-slider-details end -->
+
+							<!-- button start -->
+							<div class="pos-abs pos-bottom-center">
+								<div class="anim-fade tr-delay-03">
+									<a href="project_drone.html" class="border-btn js-pointer-large js-animsition-link">
+										<span class="border-btn__inner">Explore</span>
+										<span class="border-btn__lines-1"></span>
+										<span class="border-btn__lines-2"></span>
+									</a>
+								</div>
+							</div><!-- button end -->
+						</div>
+					</div><!-- swiper-slide end -->

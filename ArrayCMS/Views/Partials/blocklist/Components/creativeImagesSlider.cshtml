@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks;
+
+@{   
+    var content = (ContentModels.CreativeImagesSlider)Model.Content;
+
+}
+					<div class="swiper-slide">
+						<div class="bg-overlay-black"></div>
+						
+   @{
+                            var CreativeImages = content.Value<MediaWithCrops>("creativeImages");
+                            if (CreativeImages != null)
+                            {
+                                <img src="@CreativeImages.MediaUrl()" alt="@CreativeImages.Value("alt")">
+                            }
+                        }
+						
+						
+				@*		<img src="css/images/about/about_slider/people-holding-their-phones-3184435.jpg" alt="About us">
+				*@
+					</div><!-- swiper-slide end -->

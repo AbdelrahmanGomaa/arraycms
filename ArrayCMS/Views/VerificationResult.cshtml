@@ -1,0 +1,137 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.VerificationResult>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+
+
+@{
+	Layout = "MasterTemplate.cshtml";
+	
+
+    
+}
+
+
+
+	<style>
+
+
+
+
+.responsive-table li {
+  border-radius: 3px;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.responsive-table .table-header {
+  background-color: #10293f;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.responsive-table .table-row {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+  color: #10293f;
+}
+.responsive-table .col-1 {
+  flex-basis: 10%;
+}
+.responsive-table .col-2 {
+  flex-basis: 40%;
+}
+.responsive-table .col-3 {
+  flex-basis: 25%;
+}
+.responsive-table .col-4 {
+  flex-basis: 25%;
+}
+
+.container.table-result h2 {
+    color: #10293f;
+    padding: 35px 0;
+}
+
+.container.table-result {
+    padding: 72px 0;
+}
+
+
+@@media all and (max-width: 767px) {
+  .responsive-table .table-header {
+    display: none;
+  }
+  .responsive-table li {
+    display: block;
+  }
+  .responsive-table .col {
+    flex-basis: 100%;
+  }
+  .responsive-table .col {
+    display: flex;
+    padding: 10px 0;
+  }
+  .responsive-table .col:before {
+    color: #6C7A89;
+    padding-right: 10px;
+    content: attr(data-label);
+    flex-basis: 50%;
+    text-align: right;
+  }
+}
+
+	</style>
+
+
+<!-- main start -->
+		<!-- main start -->
+		<main class="js-animsition-overlay" data-animsition-overlay="true">
+			<!-- page head start -->
+@*			<section id="up" class="pos-rel section-bg-dark-1">
+				<!-- pos-rel start -->
+				<div class="pos-rel flex-min-height-100vh">
+					<div class="container padding-top-bottom-120 after-preloader-anim">
+						<h3 class="headline-xxxs hidden-box">
+							<span class="anim-slide">What We Do</span>
+						</h3>
+						<h2 class="subhead-xxl margin-top-20 anim-text-reveal tr-delay-03">90's mixtape single-origin coffee XOXO fashion axe butcher whatever, kinfolk cornhole retro cliche tofu humblebrag before they sold out. Af hammock listicle vape banjo echo park meditation organic cred subway tile.</h2>
+					</div>
+				</div><!-- pos-rel end -->
+			</section><!-- page head end -->*@
+
+			<!-- work process start -->
+			<section id="down" class="pos-rel section-bg-light-1" data-midnight="black">
+				<!-- pos-rel start -->
+
+
+			
+
+
+				<div class="container table-result">
+					<!-- <object data="AHMED BAHGAT SALAH GOMAA Ai.pdf" type="application/pdf" width="500" height="802">
+						<p>Alternative text - include a link <a href="AHMED BAHGAT SALAH GOMAA Ai.pdf">to the PDF!</a></p>
+					  </object> -->
+
+					  <object data="AHMED BAHGAT SALAH GOMAA Ai.pdf" type="application/pdf" style="min-height:100vh;width:100%"></object>
+
+					<h2>Responsive Tables Using LI <small>Triggers on 767px</small></h2>
+					<ul class="responsive-table">
+					  <li class="table-header">
+						<div class="col col-1">Student Id</div>
+						<div class="col col-2">Student Name</div>
+						<div class="col col-3">Amount Due</div>
+						<div class="col col-4">Payment Status</div>
+					  </li>
+					  <li class="table-row">
+						<div class="col col-1" data-label="Job Id">@Model.Value("certificateCode")</div>
+						<div class="col col-2" data-label="Customer Name">@Model.Value("certificateName")</div>
+						<div class="col col-3" data-label="Amount">@Model.Value("paymentAmount")</div>
+						<div class="col col-4" data-label="Payment Status">@Model.Value("paymentStatus")</div>
+					  </li>
+					 
+					</ul>
+				  </div>
+			</section><!-- work process end -->
+
+		</main><!-- main end -->

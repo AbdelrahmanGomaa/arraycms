@@ -1,0 +1,31 @@
+version: '3.8'
+services:
+  arraycms-web:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: arraycms-web
+    ports:
+      - "5101:8080"
+    volumes:
+      - arraycms-media:/app/wwwroot/media
+    depends_on:
+      - sqlserver
+    networks:
+      - default
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver-arraycms
+    environment:
+      SA_PASSWORD: "P@ssw0rd123"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1534:1433"
+
+volumes:
+  arraycms-media:
+
+networks:
+  default:
+    driver: bridge

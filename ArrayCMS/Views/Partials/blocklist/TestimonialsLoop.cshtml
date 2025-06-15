@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListModel>
+@{
+    if (Model?.Any() != true) { return; }
+}
+
+@foreach (var block in Model)
+{
+    var data = block.Content;
+
+    @await Html.PartialAsync("blocklist/Components/HomeTestimonial", block)
+}

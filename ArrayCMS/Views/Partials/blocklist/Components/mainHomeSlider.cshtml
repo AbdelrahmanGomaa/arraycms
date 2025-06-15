@@ -1,0 +1,53 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks;
+
+@{   
+    var content = (ContentModels.MainHomeSlider)Model.Content;
+
+}
+
+
+			<div class="swiper-slide home">
+				<!-- slide-bg -->
+				<div class="js-parallax-slide-bg bg-img-cover" 
+				
+				 @{
+        var MainSliderImage = content.Value<IPublishedContent>("mainSliderImage");
+    }
+         style="background-image:url(@(MainSliderImage?.Url() ?? "fallback-image-url"))">
+
+			@*	style="background-image:url(/css/images/Videos/_DSC8988.jpg)">*@
+				    
+				    
+				</div>
+				<!-- bg-overlay -->
+				<div class="bg-overlay-black"></div>
+
+				<!-- content start -->
+				<div class="flex-min-height-100vh pos-rel" data-swiper-parallax-x="30%">
+					<div class="container small padding-top-bottom-120">
+						<h2 class="headline-xl">
+							@content.Value("mainSliderText")
+						</h2>
+						<div class="margin-top-30 anim-fade tr-delay-08">
+						
+	@{
+	                        var readmoreLink = content.Value<Link>("readmoreLink");
+	                        
+	                        if (readmoreLink != null)
+	                        {
+	<a href="@readmoreLink.Url" class="border-btn js-pointer-large">
+								<span class="border-btn__inner">@readmoreLink.Name</span>
+								<span class="border-btn__lines-1"></span>
+								<span class="border-btn__lines-2"></span>
+							</a>	                        }
+	                    }
+
+						
+						
+						</div>
+					</div>
+				</div><!-- content end -->
+			</div><!-- swiper-slide end -->

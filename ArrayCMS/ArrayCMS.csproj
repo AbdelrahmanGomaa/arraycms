@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- Required Umbraco CMS Packages -->
+		<PackageReference Include="Umbraco.Cms" Version="11.4.0" />
+		<PackageReference Include="Reflections.Umbraco11.StarterKit" Version="1.0.1" />
+		<PackageReference Include="Asp.Versioning.Abstractions" Version="7.0.0" />
+
+		<!-- Optional globalization package -->
+		<PackageReference Include="Microsoft.ICU.ICU4C.Runtime" Version="68.2.0.9" />
+		<RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu"
+										 Value="68.2.0.9"
+										 Condition="$(RuntimeIdentifier.StartsWith('linux')) or $(RuntimeIdentifier.StartsWith('win')) or 
+                                     ('$(RuntimeIdentifier)' == '' and !$([MSBuild]::IsOSPlatform('osx')))" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<!-- Static media files -->
+		<Content Include="wwwroot\media\**\*" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<!-- Ensure Razor files for Umbraco backoffice -->
+		<CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
+		<RazorCompileOnBuild>false</RazorCompileOnBuild>
+		<RazorCompileOnPublish>false</RazorCompileOnPublish>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- Include appsettings and schema files -->
+		<Content Update="appsettings.*.json">
+			<DependentUpon>appsettings.json</DependentUpon>
+		</Content>
+		<Content Update="appsettings-schema.*.json">
+			<DependentUpon>appsettings-schema.json</DependentUpon>
+		</Content>
+	</ItemGroup>
+</Project>

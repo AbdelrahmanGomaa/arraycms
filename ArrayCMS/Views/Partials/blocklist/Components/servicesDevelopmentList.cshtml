@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks;
+
+@{   
+    var content = (ContentModels.ServicesDevelopmentList)Model.Content;
+
+}
+
+						<div class="accordion__tab js-accordion-tab">
+							<div class="accordion__btn js-accordion-btn container js-pointer-large">
+								<h6 class="accordion__btn-title headline-xs margin-top-bottom-30">@content.Value("developmentListTitle")</h6>
+							</div>
+							<div class="accordion__content js-accordion-content container">
+								<p class="body-text-l">@content.Value("developmentListDescription")</p>
+							</div>
+						</div><!-- accordion__tab end -->

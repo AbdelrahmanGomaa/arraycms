@@ -1,0 +1,23 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks;
+
+@{   
+    var content = (ContentModels.PartnerList)Model.Content;
+
+}						
+							
+						<div class="three-columns padding-top-60">
+									<div class="text-center hover-box pos-rel">
+										 @{
+                            var HeaderImg = content.Value<MediaWithCrops>("partnerImage");
+                            if (HeaderImg != null)
+                            {
+	<img class="client-logo client-hover-out" src="@HeaderImg.MediaUrl()" alt="clients logo">
+				<img class="client-logo client-hover-in pos-abs pos-center-center" src="@HeaderImg.MediaUrl()" alt="clients logo">                            }
+                        }	
+							
+							
+									</div>
+								</div><!-- column end -->

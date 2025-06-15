@@ -1,0 +1,99 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks;
+
+@{   
+    var content = (ContentModels.OurCreativeTeamList)Model.Content;
+
+}
+
+
+					<div class="swiper-slide">
+						<!-- anim-img-scale start -->
+						<div class="anim-img-scale hover-box">
+						    
+						     @{
+                            var CreativeTeamImg = content.Value<MediaWithCrops>("creativeTeamImg");
+                            if (CreativeTeamImg != null)
+                            {
+							<img class="anim-img-scale__inner" src="@CreativeTeamImg.MediaUrl()" alt="@CreativeTeamImg.Value("alt")">
+                            }
+                        }
+						    
+							<div class="bg-overlay-black"></div>
+							<!-- social btns start -->
+							<ul class="list pos-abs pos-left-top">
+								<li class="list__item hidden-box">
+									<div class="hover-slide">
+									    @{
+	                        var facebookLink = content.Value<Link>("facebookLink");
+	                        
+	                        if (facebookLink != null)
+	                        {
+										<a href="@facebookLink.Url" class="flip-btn js-pointer-small" data-text="Facebook">@facebookLink.Name</a>
+	                        }
+	                    }
+									</div>
+								</li>
+								<li class="list__item hidden-box">
+									<div class="hover-slide tr-delay-01">
+									      @{
+	                        var dribbleLink = content.Value<Link>("dribbleLink");
+	                        
+	                        if (dribbleLink != null)
+	                        {
+										<a href="@dribbleLink.Url" class="flip-btn js-pointer-small" data-text="Dribbble">@dribbleLink.Name</a>
+	                        }
+	                    }
+									</div>
+								</li>
+								<li class="list__item hidden-box">
+									<div class="hover-slide tr-delay-02">
+									      @{
+	                        var instagramLink = content.Value<Link>("instagramLink");
+	                        
+	                        if (instagramLink != null)
+	                        {
+										<a href="@instagramLink.Url" class="flip-btn js-pointer-small" data-text="Instagram">@instagramLink.Name</a>
+	                        }
+	                    }
+									</div>
+								</li>
+								<li class="list__item hidden-box">
+									<div class="hover-slide tr-delay-03">
+									    
+									          @{
+	                        var behanceLink = content.Value<Link>("behanceLink");
+	                        
+	                        if (behanceLink != null)
+	                        {
+										<a href="@behanceLink.Url" class="flip-btn js-pointer-small" data-text="Behance">@behanceLink.Name</a>
+	                        }
+	                    }
+						
+									    
+									</div>
+								</li>
+								<li class="list__item hidden-box">
+									<div class="hover-slide tr-delay-04">
+									    
+									          @{
+	                        var twitterLink = content.Value<Link>("twitterLink");
+	                        
+	                        if (twitterLink != null)
+	                        {
+										<a href="@twitterLink.Url" class="flip-btn js-pointer-small" data-text="Twitter">@twitterLink.Name</a>
+	                        }
+	                    }
+						
+									</div>
+								</li>
+							</ul><!-- social btns end -->
+						</div><!-- anim-img-scale end -->
+						<!-- content start -->
+						<div class="margin-top-20 margin-left-20">
+							<h4 class="subhead-m anim-text-double-fill tr-delay-01" data-text=@content.Value("memberName")>@content.Value("memberName")</h4><br>
+							<p class="headline-xxxxs margin-top-5 anim-text-double-fill invert tr-delay-03" data-text=@content.Value("memberJob")>@content.Value("memberJob")</p>
+						</div><!-- content end -->
+					</div><!-- swiper-slide end -->

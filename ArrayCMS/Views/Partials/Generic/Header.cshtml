@@ -1,0 +1,256 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{
+    var selection = Model.Root().Children().Where(x => x.IsVisible());
+}
+
+
+
+
+<!-- preloader-loading start -->
+		<div class="preloader__logoload-box">
+			<img class="preloader__logo" src="/media/4mtp0qkc/logo-white.png" alt="logo">
+			<div class="preloader__pulse"></div>
+		</div><!-- preloader-loading end -->
+
+		<!-- pointer start -->
+		<div class="pointer js-pointer" id="js-pointer">
+			<i class="pointer__inner fas fa-long-arrow-alt-right"></i>
+			<i class="pointer__inner fas fa-search"></i>
+			<i class="pointer__inner fas fa-link"></i>
+		</div><!-- pointer end -->
+
+		<div class="container">  
+			<div class="circular-text">
+				<p class="text">Array • -is • Unique • Generation • Of developers •</p>
+				<div class="arrow">
+					<div class="percentage-show" >
+						<p><span id="per-val" >0%</span></p>
+					</div>
+				</div>
+	
+			</div>
+		</div>
+
+		<!-- to top btn start -->
+		<a href="#up" class="scroll-to-btn js-headroom js-midnight-color js-smooth-scroll js-pointer-large">
+			<span class="scroll-to-btn__box">
+				<span class="scroll-to-btn__arrow"></span>
+			</span>
+		</a><!-- to top btn end -->
+
+		<!-- scroll down btn start -->
+		<a href="#down" class="scroll-to-btn to-down js-headroom js-midnight-color js-smooth-scroll js-pointer-large js-scroll-btn">
+			<span class="scroll-to-btn__box">
+				<span class="scroll-to-btn__arrow"></span>
+			</span>
+		</a><!-- scroll down btn end -->
+
+
+        <!-- header start -->
+		<header class="fixed-header">
+			<!-- logo start -->
+			<div class="header-logo js-midnight-color js-headroom">
+				<div class="hidden-box">
+					<a href="index.html" class="header-logo__box js-pointer-large js-animsition-link">
+						<img class="header-logo__img white" src="/media/4mtp0qkc/logo-white.png" alt="logo">
+						<img class="header-logo__img black" src="/media/isnnbi4f/logo-black.png" alt="logo">
+					</a>
+				</div>
+			</div><!-- logo end -->
+
+			<!-- menu-icon start -->
+			<div class="menu-icon js-menu-open-close js-pointer-large js-midnight-color js-headroom">
+				<div class="menu-icon__box">
+					<span class="menu-icon__inner"></span>
+					<span class="menu-icon__close"></span>
+				</div>
+			</div><!-- menu-icon end -->
+
+			<!-- header-contact start -->
+			<div class="header-contact js-midnight-color js-headroom">
+				<div class="header-contact__flex">
+					<div class="header-contact__anim">
+						<a href="#" class="header-contact__btn vertical-text center js-pointer-large">
+							<span class="vertical-text__inner"><i class="far fa-comment-dots"></i> Get in touch</span>
+						</a>
+					</div>
+				</div>
+			</div><!-- header-contact end -->
+
+
+			
+
+			<!-- header-social start -->
+			<div class="header-social after-preloader-anim js-midnight-color js-headroom">
+				<ul class="list list_center list_margin-20px hidden-box">
+					<li class="list__item">
+						<div class="hidden-box d-inline-block">
+							<a href="https://www.facebook.com/array.eg" class="anim-slide js-pointer-small">
+								<i class="fab fa-facebook-f"></i>
+							</a>
+						</div>
+					</li>
+
+					<li class="list__item">
+						<div class="hidden-box d-inline-block">
+							<a href="#" class="anim-slide tr-delay-04 js-pointer-small">
+								<i class="fab fa-instagram"></i>
+							</a>
+						</div>
+					</li>
+					 
+					<li class="list__item">
+						<div class="hidden-box d-inline-block">
+							<a href="#" class="anim-slide tr-delay-02 js-pointer-small">
+								<i class="fab fa-twitter"></i>
+							</a>
+						</div>
+					</li>
+					
+					<li class="list__item">
+						<div class="hidden-box d-inline-block">
+							<a href="#" class="anim-slide tr-delay-06 js-pointer-small">
+								<i class="fab fa-behance"></i>
+							</a>
+						</div>
+					</li>
+					<li class="list__item">
+						<div class="hidden-box d-inline-block">
+							<a href="#" class="anim-slide tr-delay-08 js-pointer-small">
+								<i class="fab fa-dribbble"></i>
+							</a>
+						</div>
+					</li>
+					<li class="list__item">
+						<div class="hidden-box d-inline-block">
+							<a href="#" class="anim-slide tr-delay-10 js-pointer-small">
+								<i class="fab fa-youtube"></i>
+							</a>
+						</div>
+					</li>
+				</ul>
+			</div><!-- header-social end -->
+		</header>
+		<!-- header end -->
+		
+		
+		<!-- navigation start -->
+		<nav class="nav-container pos-rel js-dropdown-active-box">
+			<!-- pos-rel start -->
+			<div class="pos-rel height-100perc">
+				<!-- dropdown close btn start -->
+				<div class="dropdown-close">
+					<div class="dropdown-close__inner js-dropdown-close js-pointer-large">
+						<span class="dropdown-close__arrow"></span>
+					</div>
+				</div><!-- dropdown close btn end -->
+
+				<!-- js-nav-slider-bg start -->
+				<div class="js-nav-slider-bg">
+					<!-- swiper-wrapper start -->
+					<div class="swiper-wrapper">
+						<!-- swiper-slide start -->
+						<div class="swiper-slide">
+							<div class="nav-slide-bg" style="background-image:url(../css/images/projects/speakers/revolt-BMest61rcqs-unsplash.jpg)"></div>
+							<div class="bg-overlay-black"></div>
+						</div><!-- swiper-slide end -->
+						<!-- swiper-slide start -->
+						<div class="swiper-slide">
+							<div class="nav-slide-bg" style="background-image:url(../css/images/projects/sneakers/revolt-164_6wVEHfI-unsplash.jpg)"></div>
+							<div class="bg-overlay-black"></div>
+						</div><!-- swiper-slide end -->
+						<!-- swiper-slide start -->
+						<div class="swiper-slide">
+							<div class="nav-slide-bg" style="background-image:url(../css/images/projects/black-bike/josh-nuttall-pIwu5XNvXpk-unsplash.jpg)"></div>
+							<div class="bg-overlay-black"></div>
+						</div><!-- swiper-slide end -->
+						<!-- swiper-slide start -->
+						<div class="swiper-slide">
+							<div class="nav-slide-bg" style="background-image:url(../css/images/projects/pexels/woman-in-black-sexy-top-2825034.jpg)"></div>
+							<div class="bg-overlay-black"></div>
+						</div><!-- swiper-slide end -->
+						<!-- swiper-slide start -->
+						<div class="swiper-slide">
+							<div class="nav-slide-bg" style="background-image:url(../css/images/projects/furniture/goashape-RvyJGaoaWrs-unsplash.jpg)"></div>
+							<div class="bg-overlay-black"></div>
+						</div><!-- swiper-slide end -->
+					</div><!-- swiper-wrapper end -->
+				</div><!-- js-nav-slider-bg end -->
+
+				<!-- menu-box start -->
+				<ul class="menu-box">
+					<!-- nav-btn-box start -->
+				
+
+                    <li class="nav-btn-box js-dropdown-open">
+						<a href="@Umbraco.Content(1086).Url()" class="nav-btn js-animsition-link js-pointer-large">
+							<span class="nav-btn__inner" data-text="Home">Home</span>
+						</a>
+					</li>
+				@foreach (var item in selection)
+                {
+                
+                    
+                    <li class="nav-btn-box js-dropdown-open">
+						<a href="@item.Url()" class="nav-btn js-animsition-link js-pointer-large">
+							<span class="nav-btn__inner" data-text="@item.Value("menuDisplayName")">@(!(String.IsNullOrEmpty(item.Value<String>("menuDisplayName"))) ? item.Value("menuDisplayName") : item.Name)</span>
+						</a>
+					</li>
+                    
+                    
+                }
+                				
+				
+			
+
+				
+				
+				
+				</ul><!-- menu-box end -->
+
+				<!-- nav-information start -->
+				<div class="nav-information">
+					<!-- nav-email start -->
+					<div>
+						<div class="hidden-box d-inline-block">
+							<div class="headline-xxxxs nav-title-color nav-reveal-anim js-nav-anim">Email</div>
+						</div>
+						<div class="nav-fade-anim js-nav-anim margin-top-10">
+							<a href="#" class="subhead-xxs nav-text-color text-hover-to-red js-pointer-small">email@Array;_agency.com</a><br>
+							<a href="#" class="subhead-xxs nav-text-color text-hover-to-red js-pointer-small">email@Array;_job.com</a>
+						</div>
+					</div><!-- nav-email end -->
+
+					<!-- nav-address start -->
+					<div>
+						<div class="hidden-box d-inline-block">
+							<div class="headline-xxxxs nav-title-color nav-reveal-anim js-nav-anim">Address</div>
+						</div>
+						<div class="nav-fade-anim js-nav-anim margin-top-10">
+							<a href="#" class="subhead-xxs nav-text-color text-hover-to-red js-pointer-small">
+								PO Box 223158 Oliver Street<br>
+								East Victoria 2006 UK
+							</a>
+						</div>
+					</div><!-- nav-address end -->
+
+					<!-- nav-phone start -->
+					<div>
+						<div class="hidden-box d-inline-block">
+							<div class="headline-xxxxs nav-title-color nav-reveal-anim js-nav-anim">Phone</div>
+						</div>
+						<div class="nav-fade-anim js-nav-anim margin-top-10">
+							<a href="#" class="subhead-xxs nav-text-color text-hover-to-red js-pointer-small">+23 8 8532 7834</a><br>
+							<a href="#" class="subhead-xxs nav-text-color text-hover-to-red js-pointer-small">+23 8 9635 7335</a>
+						</div>
+					</div><!-- nav-phone end -->
+				</div><!-- nav-information end -->
+
+				<!-- nav-copyright start -->
+				<div class="nav-copyright text-right">
+					<p class="copyright-style nav-fade-anim js-nav-anim">
+						&copy; Copyright 2020 Array;. Template by <a href="#" class="text-weight-700 js-pointer-small">Jinna Gik</a>
+					</p>
+				</div><!-- nav-copyright end -->
+			</div><!-- pos-rel end -->
+		</nav><!-- navigation end -->

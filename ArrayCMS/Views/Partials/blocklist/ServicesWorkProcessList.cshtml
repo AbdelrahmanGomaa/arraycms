@@ -1,0 +1,38 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListModel>
+
+ @for (var i = 0; i < Model.Count; i++)
+    {
+        var block = Model[i];
+    
+        if (block?.ContentUdi != null)
+        {
+                    var data = block.Content;
+
+        
+ if(i==2)
+ {
+    <div class="four-offset four-columns column-50-100 padding-top-60">
+					<div class="column-r-margin-20 js-scrollanim">
+						
+						<h3 class="headline-xxxs margin-top-30 hidden-box">
+							<span class="anim-slide tr-delay-01">@data.Value("processTitle")</span>
+						</h3>
+						<p class="body-text-xs margin-top-20 anim-text-reveal tr-delay-02">@data.Value("processDescription")</p>
+					</div>
+				</div>
+}
+
+else
+{
+    <div class="four-columns column-50-100 padding-top-60">
+					<div class="column-r-margin-20 js-scrollanim">
+						
+						<h3 class="headline-xxxs margin-top-30 hidden-box">
+							<span class="anim-slide tr-delay-01">@data.Value("processTitle")</span>
+						</h3>
+						<p class="body-text-xs margin-top-20 anim-text-reveal tr-delay-02">@data.Value("processDescription")</p>
+					</div>
+				</div>
+  }
+}
+}

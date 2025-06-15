@@ -1,0 +1,31 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks;
+
+@{   
+    var content = (ContentModels.AboutTestimonials)Model.Content;
+
+}
+
+								<div class="swiper-slide">
+									<!-- anim-img-scale start -->
+									<div class="anim-img-scale testimonials-author border-radius-50perc">
+									    
+									    
+									       @{
+                            var testimonialsmage = content.Value<MediaWithCrops>("testimonialsmage");
+                            if (testimonialsmage != null)
+                            {
+										<img class="anim-img-scale__inner" src="@testimonialsmage.MediaUrl()" alt="@testimonialsmage.Value("alt")">
+                            }
+                        }
+									</div><!-- anim-img-scale end -->
+									<div class="margin-left-right-20">
+										<p class="margin-top-60 quote quote_top body-text-s">@content.Value("testimonialDescription")</p>
+										<div class="margin-top-20 text-right">
+											<span class="subhead-m anim-text-double-fill tr-delay-01" data-text="Lucille Hatcher">@content.Value("testimonialInfoName")</span><br>
+											<span class="headline-xxxxs margin-top-5 anim-text-double-fill invert tr-delay-03" data-text="@content.Value("testimonialJobTitle")">@content.Value("testimonialJobTitle")</span>
+										</div>
+									</div>
+								</div><!-- swiper-slide end -->

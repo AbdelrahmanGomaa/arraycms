@@ -1,0 +1,32 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks;
+
+@{   
+    var content = (ContentModels.TestimonialsList)Model.Content;
+}
+
+
+						<div class="swiper-slide slide-scale-anim">
+							<div class="margin-left-right-20 padding-left-right-20 padding-top-bottom-40 content-bg-light-2 border-radius-10px">
+								<p class="margin-bottom-30 quote quote_bottom body-text-m text-color-black text-center">
+									@content.Value("testimonialsText")
+								</p>
+								<!-- anim-img-scale start -->
+								<div class="anim-img-scale testimonials-author border-radius-50perc">
+								  @{
+                            var testimonialsImg = content.Value<MediaWithCrops>("testimonialsImg");
+                            if (testimonialsImg != null)
+                            {
+									<img class="anim-img-scale__inner" src="@testimonialsImg.MediaUrl()" alt="@testimonialsImg.Value("alt")">
+                            }
+                        }
+								
+								</div><!-- anim-img-scale end -->
+								<div class="margin-top-20 text-center">
+									<span class="headline-xxxs text-color-black">@content.Value("testimonialsName")</span><br>
+									<span class="subhead-xxs text-color-888888">@content.Value("testimonialsJob")</span>
+								</div>
+							</div>
+						</div><!-- swiper-slide end -->

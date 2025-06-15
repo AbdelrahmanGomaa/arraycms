@@ -1,0 +1,121 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>;
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks;
+
+@{   
+    var content = (ContentModels.WeAreTeamList)Model.Content;
+
+}
+
+						<div class="four-columns column-50-100 padding-top-20">
+							<!-- hover-box start -->
+							<div class="line-col-l-r-margin-20 hover-box hidden-box pos-rel">
+								<div class="hover-box js-touch-hover-scroll">
+									<!-- img start -->
+									
+							@{
+    var employeeImage = content.Value<MediaWithCrops>("employeeImage");
+    if (employeeImage != null)
+    {
+        <img class="img-hover-scale in" src="@employeeImage.MediaUrl()" alt="@employeeImage.Value("alt")">
+    }
+}
+
+@*sdsdsdsdsds*@
+
+@{
+    var employeeImage2 = content.Value<MediaWithCrops>("employeeImage2");
+    if (employeeImage2 != null)
+    {
+        <img class="img-hover-overlay out" src="@employeeImage2.MediaUrl()" alt="@employeeImage2.Value("alt")">
+    }
+}
+
+									<!-- img end -->
+
+									<!-- content start -->
+									<div class="pos-abs pos-left-bottom list list_margin-1px">
+										<h4 class="list__item">
+											<span class="hidden-box d-inline-block">
+												<span class="subhead-xxs text-bg-red padding-right-30 hover-reveal">@content.Value("employeeName")</span>
+											</span>
+										</h4>
+										<p class="list__item">
+											<span class="hidden-box d-inline-block">
+												<span class="headline-xxxxs text-bg-black padding-right-30 hover-reveal tr-delay-02">@content.Value("employeeJob")</span>
+											</span>
+										</p>
+									</div><!-- content end -->
+								</div>
+
+								<!-- social btns start -->
+								<ul class="list list_right pos-abs pos-right-top">
+									<li class="list__item hidden-box">
+										<div class="hover-slide">
+									
+									@{
+	                        var facebookLink = content.Value<Link>("facebookLink");
+	                        
+	                        if (facebookLink != null)
+	                        {
+											<a href="@facebookLink.Url" class="flip-btn js-pointer-small" data-text="@facebookLink.Name">@facebookLink.Name</a>
+	                        }
+	                    }
+									
+										</div>
+									</li>
+									<li class="list__item hidden-box">
+										<div class="hover-slide tr-delay-01">
+						@{
+	                        var dribbleLink = content.Value<Link>("dribbleLink");
+	                        
+	                        if (dribbleLink != null)
+	                        {
+											<a href="@dribbleLink.Url" class="flip-btn js-pointer-small" data-text="@dribbleLink.Name">@dribbleLink.Name</a>
+	                        }
+	                    }
+										</div>
+									</li>
+									<li class="list__item hidden-box">
+										<div class="hover-slide tr-delay-02">
+						
+						@{
+	                        var instagramLink = content.Value<Link>("instagramLink");
+	                        
+	                        if (instagramLink != null)
+	                        {
+											<a href="@instagramLink.Url" class="flip-btn js-pointer-small" data-text="@instagramLink.Name">@instagramLink.Name</a>
+	                        }
+	                    }
+										</div>
+									</li>
+									<li class="list__item hidden-box">
+										<div class="hover-slide tr-delay-03">
+						
+						@{
+	                        var behanceLink = content.Value<Link>("behanceLink");
+	                        
+	                        if (behanceLink != null)
+	                        {
+											<a href="@behanceLink.Url" class="flip-btn js-pointer-small" data-text="@behanceLink.Name">@behanceLink.Name</a>
+	                        }
+	                    }
+										</div>
+									</li>
+									<li class="list__item hidden-box">
+										<div class="hover-slide tr-delay-04">
+						
+						@{
+	                        var twitterLink = content.Value<Link>("twitterLink");
+	                        
+	                        if (twitterLink != null)
+	                        {
+											<a href="@twitterLink.Url" class="flip-btn js-pointer-small" data-text="@twitterLink.Name">@twitterLink.Name</a>
+	                        }
+	                    }
+										</div>
+									</li>
+								</ul><!-- social btns end -->
+							</div><!-- hover-box end -->
+						</div><!-- column end -->

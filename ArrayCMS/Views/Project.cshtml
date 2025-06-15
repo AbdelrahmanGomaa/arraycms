@@ -1,0 +1,169 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Project>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models
+@{
+	Layout = "MasterTemplate.cshtml";
+    var ProjectImage = Model.Value<IPublishedContent>("projectImage");
+
+}
+
+
+		<main class="js-animsition-overlay" data-animsition-overlay="true">
+
+
+	<!-- pos-rel start -->
+			<section id="up" class="pos-rel bg-img-cover" style="background-image:url(@ProjectImage.Url())">
+				<!-- bg-overlay -->
+				<div class="bg-overlay-black"></div>
+				<!-- pos-rel start -->
+				<div class="pos-rel flex-min-height-100vh">
+					<div class="padding-top-bottom-120 width-100perc after-preloader-anim">
+						<!-- title start -->
+						<h2 class="headline-xxxxl text-center hidden-box">
+							<span class="anim-slide">@Model.Value("projectTitle")</span>
+						</h2><!-- title end -->
+
+						<!-- description start -->
+						<div class="flex-container description">
+							<div class="four-columns column-50-100 padding-top-1 text-center">
+								<span class="hidden-box d-inline-block">
+									<span class="subhead-xxs anim-reveal">@Model.Value("projectCategory")</span>
+								</span>
+							</div>
+							<div class="four-columns column-50-100 padding-top-1 text-center">
+								<span class="hidden-box d-inline-block">
+									<span class="subhead-xxs anim-reveal tr-delay-02">@Model.Value("projectType")</span>
+								</span>
+							</div>
+							<div class="four-columns column-50-100 padding-top-1 text-center">
+								<span class="hidden-box d-inline-block">
+									<span class="subhead-xxs anim-reveal tr-delay-04">@Model.Value("projectDate")</span>
+								</span>
+							</div>
+						</div><!-- description end -->
+					</div>
+				</div><!-- pos-rel end -->
+			</section><!-- pos-rel end -->
+
+			<!-- pos-rel start -->
+			<div id="down" class="pos-rel section-bg-dark-1">
+				<!-- pos-rel start -->
+				<div class="pos-rel flex-min-height-100vh">
+					<!-- flex-container start -->
+					<div class="container small flex-container padding-top-60 padding-bottom-120">
+						<!-- column start -->
+						<div class="four-columns column-100-100 padding-top-60">
+							<!-- list start -->
+							
+							<ul class="list js-scrollanim">
+															@Model.Value("CategoryList")
+
+							</ul><!-- list end -->
+						</div><!-- column end -->
+
+						<!-- column start -->
+						<div class="eight-columns column-100-100 padding-top-60">
+							<div class="column-l-margin-40-999">
+								<p class="body-text-m anim-text-reveal js-scrollanim">@Model.Value("categoryDescription")</p>
+							</div>
+						</div><!-- column end -->
+					</div><!-- flex-container end -->
+				</div><!-- pos-rel end -->
+			</div><!-- pos-rel end -->
+
+			<!-- pos-rel start -->
+			<section class="pos-rel section-bg-light-1" data-midnight="black">
+				<!-- pos-rel start -->
+				<div class="pos-rel flex-min-height-100vh">
+					<!-- flex-container start -->
+					<div class="container flex-container padding-top-100 padding-bottom-120">
+						<!-- column start -->
+						<div class="four-columns column-100-100 padding-top-20">
+							<div class="column-l-r-margin-10-999">
+							<h2 class="headline-xxs text-color-black js-scrollanim">
+								@Model.Value("innerLeftDesc")
+				</h2>
+							</div>
+						</div><!-- column end -->
+
+						<!-- column start -->
+						<div class="eight-columns column-100-100 padding-top-20">
+							<div class="column-l-r-margin-10-999">
+								<p class="body-text-s text-color-black anim-text-reveal js-scrollanim">@Model.Value("innerRightDesc")</p>
+							</div>
+						</div><!-- column end -->
+                           
+                           
+                            @{
+                            var typedMultiMediaPicker = Model.Value<IEnumerable<MediaWithCrops>>("innerPhotos");
+                            foreach (var entry in typedMultiMediaPicker)
+                            {
+                            
+                            
+                            
+                            
+                            
+                            	<!-- column start -->
+						<div class="four-columns column-100-100 padding-top-60">
+							<a href="@entry.MediaUrl()" class="column-l-r-margin-10-999 d-block js-pointer-zoom js-photo-popup">
+								<img src="@entry.MediaUrl()" alt="project image">
+							</a>
+						</div><!-- column end -->
+
+                            
+                            }
+                            }
+
+
+					
+
+						
+					</div><!-- flex-container end -->
+				</div><!-- pos-rel end -->
+			</section><!-- pos-rel end -->
+			
+			<!-- pos-rel start -->
+<div class="pos-rel">
+    
+    
+       @{
+                            var ProjectImg2 = Model.Value<MediaWithCrops>("projectImg");
+                            if (ProjectImg2 != null)
+                            {
+		                                <img src="@ProjectImg2.MediaUrl()" alt="@ProjectImg2.Value("alt")">
+                            }
+                        }
+    
+@*	<img src="css/images/projects/drone/pexels-photo-257699.jpg" alt="project image">*@
+</div><!-- pos-rel end -->
+
+
+<!-- pos-rel start -->
+<section class="pos-rel section-bg-dark-1">
+	<!-- pos-rel start -->
+	<div class="pos-rel flex-min-height-100vh">
+		<!-- flex-container start -->
+		<div class="container small flex-container reverse padding-top-100 padding-bottom-120">
+			<!-- column start -->
+			<div class="four-columns column-100-100 padding-top-20">
+				<h5 class="margin-left-50 js-scrollanim">
+					@Model.Value("projectInfo")
+				</h5>
+			</div><!-- column end -->
+
+			<!-- column start -->
+			<div class="eight-columns column-100-100 padding-top-20">
+				<div class="column-l-margin-40-999">
+					<blockquote class="quote body-text-s anim-text-reveal js-scrollanim">@Model.Value("projectDescription")</blockquote>
+				</div>
+			</div><!-- column end -->
+		</div><!-- flex-container end -->
+	</div><!-- pos-rel end -->
+</section><!-- pos-rel end -->
+
+<!-- next project start -->
+
+
+<!-- next project end -->
+		</main><!-- main end -->
