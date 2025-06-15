@@ -21,8 +21,11 @@
 
 	<ItemGroup>
 		<!-- Static media files -->
-		<Content Include="wwwroot\media\**\*" />
-	</ItemGroup>
+    <Content Include="wwwroot\media\**\*">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+
+  </ItemGroup>
 
 	<PropertyGroup>
 		<!-- Ensure Razor files for Umbraco backoffice -->
