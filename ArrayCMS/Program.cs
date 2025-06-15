@@ -14,6 +14,8 @@ namespace ArrayCMS
                 {
                     webBuilder.UseStaticWebAssets();
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.UseUrls("http://*:8080");
+
                 });
     }
 }
