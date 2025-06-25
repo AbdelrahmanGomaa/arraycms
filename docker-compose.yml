@@ -1,4 +1,15 @@
 services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sqlserver
+    environment:
+      SA_PASSWORD: "P@ssw0rd123"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1534:1433"  
+    volumes:
+      - /var/opt/mssql/data:/var/opt/mssql/data
+
   arraycms-web:
     build:
       context: .
@@ -6,25 +17,10 @@ services:
     container_name: arraycms-web
     ports:
       - "5101:8080"
-    volumes:
-      - arraycms-media:/app/wwwroot/media
     depends_on:
       - sqlserver
     networks:
       - default
 
-  sqlserver:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: sqlserver-arraycms
-    environment:
-      SA_PASSWORD: "P@ssw0rd123"
-      ACCEPT_EULA: "Y"
-    ports:
-      - "1534:1433"
-
 volumes:
-  arraycms-media:
-
-networks:
-  default:
-    driver: bridge
+  sqlserverdata:
