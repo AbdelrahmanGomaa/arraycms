@@ -1,7 +1,7 @@
 services:
-  sqlserver:
+  sqlserver-arraycms:
     image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: sqlserver
+    container_name: sqlserver-arraycms
     environment:
       SA_PASSWORD: "P@ssw0rd123"
       ACCEPT_EULA: "Y"
@@ -18,7 +18,7 @@ services:
     ports:
       - "5101:8080"
     depends_on:
-      - sqlserver
+      - sqlserver-arraycms
     networks:
       - default
 
